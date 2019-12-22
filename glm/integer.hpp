@@ -34,7 +34,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/uaddCarry.xml">GLSL uaddCarry man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<length_t L, qualifier Q>
-	GLM_FUNC_DECL vec<L, uint, Q> uaddCarry(
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, uint, Q> uaddCarry(
 		vec<L, uint, Q> const& x,
 		vec<L, uint, Q> const& y,
 		vec<L, uint, Q> & carry);
@@ -48,7 +48,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/usubBorrow.xml">GLSL usubBorrow man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<length_t L, qualifier Q>
-	GLM_FUNC_DECL vec<L, uint, Q> usubBorrow(
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, uint, Q> usubBorrow(
 		vec<L, uint, Q> const& x,
 		vec<L, uint, Q> const& y,
 		vec<L, uint, Q> & borrow);
@@ -62,7 +62,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/umulExtended.xml">GLSL umulExtended man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<length_t L, qualifier Q>
-	GLM_FUNC_DECL void umulExtended(
+	GLM_NODISCARD GLM_FUNC_DECL void umulExtended(
 		vec<L, uint, Q> const& x,
 		vec<L, uint, Q> const& y,
 		vec<L, uint, Q> & msb,
@@ -77,7 +77,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/imulExtended.xml">GLSL imulExtended man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<length_t L, qualifier Q>
-	GLM_FUNC_DECL void imulExtended(
+	GLM_NODISCARD GLM_FUNC_DECL void imulExtended(
 		vec<L, int, Q> const& x,
 		vec<L, int, Q> const& y,
 		vec<L, int, Q> & msb,
@@ -100,7 +100,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitfieldExtract.xml">GLSL bitfieldExtract man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, T, Q> bitfieldExtract(
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, T, Q> bitfieldExtract(
 		vec<L, T, Q> const& Value,
 		int Offset,
 		int Bits);
@@ -121,7 +121,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitfieldInsert.xml">GLSL bitfieldInsert man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, T, Q> bitfieldInsert(
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, T, Q> bitfieldInsert(
 		vec<L, T, Q> const& Base,
 		vec<L, T, Q> const& Insert,
 		int Offset,
@@ -137,7 +137,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitfieldReverse.xml">GLSL bitfieldReverse man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, T, Q> bitfieldReverse(vec<L, T, Q> const& v);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, T, Q> bitfieldReverse(vec<L, T, Q> const& v);
 
 	/// Returns the number of bits set to 1 in the binary representation of value.
 	///
@@ -146,7 +146,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitCount.xml">GLSL bitCount man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<typename genType>
-	GLM_FUNC_DECL int bitCount(genType v);
+	GLM_NODISCARD GLM_FUNC_DECL int bitCount(genType v);
 
 	/// Returns the number of bits set to 1 in the binary representation of value.
 	///
@@ -156,7 +156,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitCount.xml">GLSL bitCount man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, int, Q> bitCount(vec<L, T, Q> const& v);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, int, Q> bitCount(vec<L, T, Q> const& v);
 
 	/// Returns the bit number of the least significant bit set to
 	/// 1 in the binary representation of value.
@@ -167,7 +167,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findLSB.xml">GLSL findLSB man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<typename genIUType>
-	GLM_FUNC_DECL int findLSB(genIUType x);
+	GLM_NODISCARD GLM_FUNC_DECL int findLSB(genIUType x);
 
 	/// Returns the bit number of the least significant bit set to
 	/// 1 in the binary representation of value.
@@ -179,7 +179,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findLSB.xml">GLSL findLSB man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, int, Q> findLSB(vec<L, T, Q> const& v);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, int, Q> findLSB(vec<L, T, Q> const& v);
 
 	/// Returns the bit number of the most significant bit in the binary representation of value.
 	/// For positive integers, the result will be the bit number of the most significant bit set to 1.
@@ -191,7 +191,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findMSB.xml">GLSL findMSB man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<typename genIUType>
-	GLM_FUNC_DECL int findMSB(genIUType x);
+	GLM_NODISCARD GLM_FUNC_DECL int findMSB(genIUType x);
 
 	/// Returns the bit number of the most significant bit in the binary representation of value.
 	/// For positive integers, the result will be the bit number of the most significant bit set to 1.
@@ -204,7 +204,7 @@ namespace glm
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findMSB.xml">GLSL findMSB man page</a>
 	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, int, Q> findMSB(vec<L, T, Q> const& v);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, int, Q> findMSB(vec<L, T, Q> const& v);
 
 	/// @}
 }//namespace glm

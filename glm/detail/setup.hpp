@@ -286,6 +286,12 @@
 		((GLM_COMPILER & GLM_COMPILER_VC) && (GLM_COMPILER >= GLM_COMPILER_VC15))))
 #endif
 
+#if (GLM_LANG & GLM_LANG_CXX17_FLAG)
+#	define GLM_HAS_NODISCARD 1
+#else
+#	define GLM_HAS_NODISCARD 0
+#endif
+
 #if GLM_HAS_CONSTEXPR
 #	define GLM_CONSTEXPR constexpr
 #else
@@ -437,6 +443,12 @@
 
 #define GLM_FUNC_DECL GLM_CUDA_FUNC_DECL
 #define GLM_FUNC_QUALIFIER GLM_CUDA_FUNC_DEF GLM_INLINE
+
+#if GLM_HAS_NODISCARD
+#	define GLM_NODISCARD	[[nodiscard]]
+#else
+#	define GLM_NODISCARD
+#endif
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Swizzle operators
