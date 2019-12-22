@@ -381,11 +381,19 @@ namespace glm
 
 	// -- Boolean operators --
 
+#if GLM_VEC_EQUAL_OP
+	template<typename T, qualifier Q>
+	GLM_NODISCARD GLM_FUNC_DECL GLM_CONSTEXPR vec<2, bool, Q> operator==(vec<2, T, Q> const& v1, vec<2, T, Q> const& v2);
+
+	template<typename T, qualifier Q>
+	GLM_NODISCARD GLM_FUNC_DECL GLM_CONSTEXPR vec<2, bool, Q> operator!=(vec<2, T, Q> const& v1, vec<2, T, Q> const& v2);
+#else
 	template<typename T, qualifier Q>
 	GLM_NODISCARD GLM_FUNC_DECL GLM_CONSTEXPR bool operator==(vec<2, T, Q> const& v1, vec<2, T, Q> const& v2);
 
 	template<typename T, qualifier Q>
 	GLM_NODISCARD GLM_FUNC_DECL GLM_CONSTEXPR bool operator!=(vec<2, T, Q> const& v1, vec<2, T, Q> const& v2);
+#endif
 
 	template<qualifier Q>
 	GLM_NODISCARD GLM_FUNC_DECL GLM_CONSTEXPR vec<2, bool, Q> operator&&(vec<2, bool, Q> const& v1, vec<2, bool, Q> const& v2);

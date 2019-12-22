@@ -1038,7 +1038,26 @@ namespace glm
 	}
 
 	// -- Boolean operators --
+	
+#if GLM_VEC_EQUAL_OP
+	template<typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<3, bool, Q> operator==(vec<3, T, Q> const& v1, vec<3, T, Q> const& v2)
+	{
+		return vec<3, bool, Q>(
+			detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.x, v2.x),
+			detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.y, v2.y),
+			detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.z, v2.z));
+	}
 
+	template<typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<3, bool, Q> operator!=(vec<3, T, Q> const& v1, vec<3, T, Q> const& v2)
+	{
+		return vec<3, bool, Q>(
+			!detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.x, v2.x),
+			!detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.y, v2.y),
+			!detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.z, v2.z));
+	}
+#else
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator==(vec<3, T, Q> const& v1, vec<3, T, Q> const& v2)
 	{
@@ -1053,6 +1072,7 @@ namespace glm
 	{
 		return !(v1 == v2);
 	}
+#endif
 
 	template<qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<3, bool, Q> operator&&(vec<3, bool, Q> const& v1, vec<3, bool, Q> const& v2)

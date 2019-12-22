@@ -1109,7 +1109,28 @@ namespace detail
 	}
 
 	// -- Boolean operators --
+	
+#if GLM_VEC_EQUAL_OP
+	template<typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, bool, Q> operator==(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
+	{
+		return vec<4, bool, Q>(
+			detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.x, v2.x),
+			detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.y, v2.y),
+			detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.z, v2.z),
+			detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.w, v2.w));
+	}
 
+	template<typename T, qualifier Q>
+	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, bool, Q> operator!=(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
+	{
+		return vec<4, bool, Q>(
+			!detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.x, v2.x),
+			!detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.y, v2.y),
+			!detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.z, v2.z),
+			!detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.w, v2.w));
+	}
+#else
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator==(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
 	{
@@ -1121,6 +1142,7 @@ namespace detail
 	{
 		return detail::compute_vec4_nequal<T, Q, detail::is_int<T>::value, sizeof(T) * 8, detail::is_aligned<Q>::value>::call(v1, v2);
 	}
+#endif
 
 	template<qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, bool, Q> operator&&(vec<4, bool, Q> const& v1, vec<4, bool, Q> const& v2)
