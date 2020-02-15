@@ -4,13 +4,13 @@ namespace glm{
 
 // Min comparison between 2 variables
 template<typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER U associatedMin(T x, U a, T y, U b)
+GLM_NODISCARD GLM_FUNC_QUALIFIER U associatedMin(T x, U a, T y, U b)
 {
 	return x < y ? a : b;
 }
 
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<2, U, Q> associatedMin
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<2, U, Q> associatedMin
 (
 	vec<L, T, Q> const& x, vec<L, U, Q> const& a,
 	vec<L, T, Q> const& y, vec<L, U, Q> const& b
@@ -23,7 +23,7 @@ GLM_FUNC_QUALIFIER vec<2, U, Q> associatedMin
 }
 
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 (
 	T x, const vec<L, U, Q>& a,
 	T y, const vec<L, U, Q>& b
@@ -36,7 +36,7 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 }
 
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 (
 	vec<L, T, Q> const& x, U a,
 	vec<L, T, Q> const& y, U b
@@ -50,7 +50,7 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 
 // Min comparison between 3 variables
 template<typename T, typename U>
-GLM_FUNC_QUALIFIER U associatedMin
+GLM_NODISCARD GLM_FUNC_QUALIFIER U associatedMin
 (
 	T x, U a,
 	T y, U b,
@@ -62,7 +62,7 @@ GLM_FUNC_QUALIFIER U associatedMin
 }
 
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 (
 	vec<L, T, Q> const& x, vec<L, U, Q> const& a,
 	vec<L, T, Q> const& y, vec<L, U, Q> const& b,
@@ -77,7 +77,7 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 
 // Min comparison between 4 variables
 template<typename T, typename U>
-GLM_FUNC_QUALIFIER U associatedMin
+GLM_NODISCARD GLM_FUNC_QUALIFIER U associatedMin
 (
 	T x, U a,
 	T y, U b,
@@ -95,7 +95,7 @@ GLM_FUNC_QUALIFIER U associatedMin
 
 // Min comparison between 4 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 (
 	vec<L, T, Q> const& x, vec<L, U, Q> const& a,
 	vec<L, T, Q> const& y, vec<L, U, Q> const& b,
@@ -117,7 +117,7 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 
 // Min comparison between 4 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 (
 	T x, vec<L, U, Q> const& a,
 	T y, vec<L, U, Q> const& b,
@@ -140,7 +140,7 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 
 // Min comparison between 4 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 (
 	vec<L, T, Q> const& x, U a,
 	vec<L, T, Q> const& y, U b,
@@ -162,14 +162,14 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMin
 
 // Max comparison between 2 variables
 template<typename T, typename U>
-GLM_FUNC_QUALIFIER U associatedMax(T x, U a, T y, U b)
+GLM_NODISCARD GLM_FUNC_QUALIFIER U associatedMax(T x, U a, T y, U b)
 {
 	return x > y ? a : b;
 }
 
 // Max comparison between 2 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<2, U, Q> associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<2, U, Q> associatedMax
 (
 	vec<L, T, Q> const& x, vec<L, U, Q> const& a,
 	vec<L, T, Q> const& y, vec<L, U, Q> const& b
@@ -183,7 +183,7 @@ GLM_FUNC_QUALIFIER vec<2, U, Q> associatedMax
 
 // Max comparison between 2 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, T, Q> associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> associatedMax
 (
 	T x, vec<L, U, Q> const& a,
 	T y, vec<L, U, Q> const& b
@@ -197,7 +197,7 @@ GLM_FUNC_QUALIFIER vec<L, T, Q> associatedMax
 
 // Max comparison between 2 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 (
 	vec<L, T, Q> const& x, U a,
 	vec<L, T, Q> const& y, U b
@@ -211,7 +211,7 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 
 // Max comparison between 3 variables
 template<typename T, typename U>
-GLM_FUNC_QUALIFIER U associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER U associatedMax
 (
 	T x, U a,
 	T y, U b,
@@ -224,7 +224,7 @@ GLM_FUNC_QUALIFIER U associatedMax
 
 // Max comparison between 3 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 (
 	vec<L, T, Q> const& x, vec<L, U, Q> const& a,
 	vec<L, T, Q> const& y, vec<L, U, Q> const& b,
@@ -239,7 +239,7 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 
 // Max comparison between 3 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, T, Q> associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> associatedMax
 (
 	T x, vec<L, U, Q> const& a,
 	T y, vec<L, U, Q> const& b,
@@ -254,7 +254,7 @@ GLM_FUNC_QUALIFIER vec<L, T, Q> associatedMax
 
 // Max comparison between 3 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 (
 	vec<L, T, Q> const& x, U a,
 	vec<L, T, Q> const& y, U b,
@@ -269,7 +269,7 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 
 // Max comparison between 4 variables
 template<typename T, typename U>
-GLM_FUNC_QUALIFIER U associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER U associatedMax
 (
 	T x, U a,
 	T y, U b,
@@ -287,7 +287,7 @@ GLM_FUNC_QUALIFIER U associatedMax
 
 // Max comparison between 4 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 (
 	vec<L, T, Q> const& x, vec<L, U, Q> const& a,
 	vec<L, T, Q> const& y, vec<L, U, Q> const& b,
@@ -309,7 +309,7 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 
 // Max comparison between 4 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 (
 	T x, vec<L, U, Q> const& a,
 	T y, vec<L, U, Q> const& b,
@@ -332,7 +332,7 @@ GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 
 // Max comparison between 4 variables
 template<length_t L, typename T, typename U, qualifier Q>
-GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
+GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, U, Q> associatedMax
 (
 	vec<L, T, Q> const& x, U a,
 	vec<L, T, Q> const& y, U b,

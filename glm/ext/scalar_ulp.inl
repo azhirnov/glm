@@ -189,7 +189,7 @@ namespace detail
 namespace glm
 {
 	template<>
-	GLM_FUNC_QUALIFIER float nextFloat(float x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER float nextFloat(float x)
 	{
 #		if GLM_HAS_CXX11_STL
 			return std::nextafter(x, std::numeric_limits<float>::max());
@@ -203,7 +203,7 @@ namespace glm
 	}
 
 	template<>
-	GLM_FUNC_QUALIFIER double nextFloat(double x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER double nextFloat(double x)
 	{
 #		if GLM_HAS_CXX11_STL
 			return std::nextafter(x, std::numeric_limits<double>::max());
@@ -217,7 +217,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER T nextFloat(T x, int ULPs)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T nextFloat(T x, int ULPs)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'next_float' only accept floating-point input");
 		assert(ULPs >= 0);
@@ -228,7 +228,7 @@ namespace glm
 		return temp;
 	}
 
-	GLM_FUNC_QUALIFIER float prevFloat(float x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER float prevFloat(float x)
 	{
 #		if GLM_HAS_CXX11_STL
 			return std::nextafter(x, std::numeric_limits<float>::min());
@@ -241,7 +241,7 @@ namespace glm
 #		endif
 	}
 
-	GLM_FUNC_QUALIFIER double prevFloat(double x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER double prevFloat(double x)
 	{
 #		if GLM_HAS_CXX11_STL
 			return std::nextafter(x, std::numeric_limits<double>::min());
@@ -255,7 +255,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER T prevFloat(T x, int ULPs)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T prevFloat(T x, int ULPs)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'prev_float' only accept floating-point input");
 		assert(ULPs >= 0);
@@ -266,7 +266,7 @@ namespace glm
 		return temp;
 	}
 
-	GLM_FUNC_QUALIFIER int floatDistance(float x, float y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int floatDistance(float x, float y)
 	{
 		detail::float_t<float> const a(x);
 		detail::float_t<float> const b(y);
@@ -274,7 +274,7 @@ namespace glm
 		return abs(a.i - b.i);
 	}
 
-	GLM_FUNC_QUALIFIER int64 floatDistance(double x, double y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int64 floatDistance(double x, double y)
 	{
 		detail::float_t<double> const a(x);
 		detail::float_t<double> const b(y);

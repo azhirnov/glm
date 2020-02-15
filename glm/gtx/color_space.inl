@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> rgbColor(const vec<3, T, Q>& hsvColor)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> rgbColor(const vec<3, T, Q>& hsvColor)
 	{
 		vec<3, T, Q> hsv = hsvColor;
 		vec<3, T, Q> rgbColor;
@@ -60,7 +60,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> hsvColor(const vec<3, T, Q>& rgbColor)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> hsvColor(const vec<3, T, Q>& rgbColor)
 	{
 		vec<3, T, Q> hsv = rgbColor;
 		float Min   = min(min(rgbColor.r, rgbColor.g), rgbColor.b);
@@ -100,7 +100,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> saturation(T const s)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> saturation(T const s)
 	{
 		vec<3, T, defaultp> rgbw = vec<3, T, defaultp>(T(0.2126), T(0.7152), T(0.0722));
 
@@ -121,19 +121,19 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> saturation(const T s, const vec<3, T, Q>& color)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> saturation(const T s, const vec<3, T, Q>& color)
 	{
 		return vec<3, T, Q>(saturation(s) * vec<4, T, Q>(color, T(0)));
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<4, T, Q> saturation(const T s, const vec<4, T, Q>& color)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, T, Q> saturation(const T s, const vec<4, T, Q>& color)
 	{
 		return saturation(s) * color;
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER T luminosity(const vec<3, T, Q>& color)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T luminosity(const vec<3, T, Q>& color)
 	{
 		const vec<3, T, Q> tmp = vec<3, T, Q>(0.33, 0.59, 0.11);
 		return dot(color, tmp);

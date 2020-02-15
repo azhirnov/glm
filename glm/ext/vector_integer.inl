@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, bool, Q> isPowerOfTwo(vec<L, T, Q> const& Value)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, bool, Q> isPowerOfTwo(vec<L, T, Q> const& Value)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_integer, "'isPowerOfTwo' only accept integer inputs");
 
@@ -12,7 +12,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> nextPowerOfTwo(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> nextPowerOfTwo(vec<L, T, Q> const& v)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_integer, "'nextPowerOfTwo' only accept integer inputs");
 
@@ -20,7 +20,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> prevPowerOfTwo(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> prevPowerOfTwo(vec<L, T, Q> const& v)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_integer, "'prevPowerOfTwo' only accept integer inputs");
 
@@ -28,7 +28,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, bool, Q> isMultiple(vec<L, T, Q> const& Value, T Multiple)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, bool, Q> isMultiple(vec<L, T, Q> const& Value, T Multiple)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_integer, "'isMultiple' only accept integer inputs");
 
@@ -36,7 +36,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, bool, Q> isMultiple(vec<L, T, Q> const& Value, vec<L, T, Q> const& Multiple)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, bool, Q> isMultiple(vec<L, T, Q> const& Value, vec<L, T, Q> const& Multiple)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_integer, "'isMultiple' only accept integer inputs");
 
@@ -44,7 +44,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> nextMultiple(vec<L, T, Q> const& Source, T Multiple)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> nextMultiple(vec<L, T, Q> const& Source, T Multiple)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_integer, "'nextMultiple' only accept integer inputs");
 
@@ -52,7 +52,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> nextMultiple(vec<L, T, Q> const& Source, vec<L, T, Q> const& Multiple)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> nextMultiple(vec<L, T, Q> const& Source, vec<L, T, Q> const& Multiple)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_integer, "'nextMultiple' only accept integer inputs");
 
@@ -60,7 +60,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> prevMultiple(vec<L, T, Q> const& Source, T Multiple)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> prevMultiple(vec<L, T, Q> const& Source, T Multiple)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_integer, "'prevMultiple' only accept integer inputs");
 
@@ -68,7 +68,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> prevMultiple(vec<L, T, Q> const& Source, vec<L, T, Q> const& Multiple)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> prevMultiple(vec<L, T, Q> const& Source, vec<L, T, Q> const& Multiple)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_integer, "'prevMultiple' only accept integer inputs");
 
@@ -76,7 +76,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, int, Q> findNSB(vec<L, T, Q> const& Source, vec<L, int, Q> SignificantBitCount)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, int, Q> findNSB(vec<L, T, Q> const& Source, vec<L, int, Q> SignificantBitCount)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_integer, "'findNSB' only accept integer inputs");
 

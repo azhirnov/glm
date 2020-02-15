@@ -3,7 +3,7 @@
 namespace glm
 {
 	template <length_t C, length_t R, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<C, R, T, Q> flipud(mat<C, R, T, Q> const& in)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<C, R, T, Q> flipud(mat<C, R, T, Q> const& in)
 	{
 		mat<R, C, T, Q> tin = transpose(in);
 		tin = fliplr(tin);
@@ -13,7 +13,7 @@ namespace glm
 	}
 
 	template <length_t C, length_t R, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<C, R, T, Q> fliplr(mat<C, R, T, Q> const& in)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<C, R, T, Q> fliplr(mat<C, R, T, Q> const& in)
 	{
 		mat<C, R, T, Q> out;
 		for (length_t i = 0; i < C; i++)

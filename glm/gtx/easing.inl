@@ -5,7 +5,7 @@
 namespace glm{
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType linearInterpolation(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType linearInterpolation(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -15,7 +15,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType quadraticEaseIn(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType quadraticEaseIn(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -25,7 +25,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType quadraticEaseOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType quadraticEaseOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -35,7 +35,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType quadraticEaseInOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType quadraticEaseInOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -52,7 +52,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType cubicEaseIn(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType cubicEaseIn(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -62,7 +62,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType cubicEaseOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType cubicEaseOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -73,7 +73,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType cubicEaseInOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType cubicEaseInOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -91,7 +91,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType quarticEaseIn(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType quarticEaseIn(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -101,7 +101,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType quarticEaseOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType quarticEaseOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -112,7 +112,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType quarticEaseInOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType quarticEaseInOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -130,7 +130,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType quinticEaseIn(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType quinticEaseIn(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -140,7 +140,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType quinticEaseOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType quinticEaseOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -151,7 +151,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType quinticEaseInOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType quinticEaseInOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -169,7 +169,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType sineEaseIn(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType sineEaseIn(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -179,7 +179,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType sineEaseOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType sineEaseOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -189,7 +189,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType sineEaseInOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType sineEaseInOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -199,7 +199,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType circularEaseIn(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType circularEaseIn(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -209,7 +209,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType circularEaseOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType circularEaseOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -219,7 +219,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType circularEaseInOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType circularEaseInOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -236,7 +236,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType exponentialEaseIn(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType exponentialEaseIn(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -254,7 +254,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType exponentialEaseOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType exponentialEaseOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -269,7 +269,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType exponentialEaseInOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType exponentialEaseInOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -282,7 +282,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType elasticEaseIn(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType elasticEaseIn(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -292,7 +292,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType elasticEaseOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType elasticEaseOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -302,7 +302,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType elasticEaseInOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType elasticEaseInOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -315,7 +315,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType backEaseIn(genType const& a, genType const& o)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType backEaseIn(genType const& a, genType const& o)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -326,7 +326,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType backEaseOut(genType const& a, genType const& o)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType backEaseOut(genType const& a, genType const& o)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -338,7 +338,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType backEaseInOut(genType const& a, genType const& o)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType backEaseInOut(genType const& a, genType const& o)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -364,25 +364,25 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType backEaseIn(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType backEaseIn(genType const& a)
 	{
 		return backEaseIn(a, static_cast<genType>(1.70158));
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType backEaseOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType backEaseOut(genType const& a)
 	{
 		return backEaseOut(a, static_cast<genType>(1.70158));
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType backEaseInOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType backEaseInOut(genType const& a)
 	{
 		return backEaseInOut(a, static_cast<genType>(1.70158));
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType bounceEaseOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType bounceEaseOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -407,7 +407,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType bounceEaseIn(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType bounceEaseIn(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());
@@ -417,7 +417,7 @@ namespace glm{
 	}
 
 	template <typename genType>
-	GLM_FUNC_QUALIFIER genType bounceEaseInOut(genType const& a)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType bounceEaseInOut(genType const& a)
 	{
 		// Only defined in [0, 1]
 		assert(a >= zero<genType>());

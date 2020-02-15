@@ -202,7 +202,7 @@ namespace detail
 }//namespace detail
 
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType linearRand(genType Min, genType Max)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType linearRand(genType Min, genType Max)
 	{
 		return detail::compute_linearRand<1, genType, highp>::call(
 			vec<1, genType, highp>(Min),
@@ -210,13 +210,13 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> linearRand(vec<L, T, Q> const& Min, vec<L, T, Q> const& Max)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> linearRand(vec<L, T, Q> const& Min, vec<L, T, Q> const& Max)
 	{
 		return detail::compute_linearRand<L, T, Q>::call(Min, Max);
 	}
 
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType gaussRand(genType Mean, genType Deviation)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType gaussRand(genType Mean, genType Deviation)
 	{
 		genType w, x1, x2;
 
@@ -232,13 +232,13 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> gaussRand(vec<L, T, Q> const& Mean, vec<L, T, Q> const& Deviation)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> gaussRand(vec<L, T, Q> const& Mean, vec<L, T, Q> const& Deviation)
 	{
 		return detail::functor2<vec, L, T, Q>::call(gaussRand, Mean, Deviation);
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER vec<2, T, defaultp> diskRand(T Radius)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<2, T, defaultp> diskRand(T Radius)
 	{
 		assert(Radius > static_cast<T>(0));
 
@@ -258,7 +258,7 @@ namespace detail
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER vec<3, T, defaultp> ballRand(T Radius)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, defaultp> ballRand(T Radius)
 	{
 		assert(Radius > static_cast<T>(0));
 
@@ -278,7 +278,7 @@ namespace detail
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER vec<2, T, defaultp> circularRand(T Radius)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<2, T, defaultp> circularRand(T Radius)
 	{
 		assert(Radius > static_cast<T>(0));
 
@@ -287,7 +287,7 @@ namespace detail
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER vec<3, T, defaultp> sphericalRand(T Radius)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, defaultp> sphericalRand(T Radius)
 	{
 		assert(Radius > static_cast<T>(0));
 

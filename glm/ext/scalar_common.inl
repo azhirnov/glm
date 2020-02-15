@@ -1,25 +1,25 @@
 namespace glm
 {
 	template<typename T>
-	GLM_FUNC_QUALIFIER T min(T a, T b, T c)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T min(T a, T b, T c)
 	{
 		return glm::min(glm::min(a, b), c);
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER T min(T a, T b, T c, T d)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T min(T a, T b, T c, T d)
 	{
 		return glm::min(glm::min(a, b), glm::min(c, d));
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER T max(T a, T b, T c)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T max(T a, T b, T c)
 	{
 		return glm::max(glm::max(a, b), c);
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER T max(T a, T b, T c, T d)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T max(T a, T b, T c, T d)
 	{
 		return glm::max(glm::max(a, b), glm::max(c, d));
 	}
@@ -28,7 +28,7 @@ namespace glm
 		using std::fmin;
 #	else
 		template<typename T>
-		GLM_FUNC_QUALIFIER T fmin(T a, T b)
+		GLM_NODISCARD GLM_FUNC_QUALIFIER T fmin(T a, T b)
 		{
 			GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'fmin' only accept floating-point input");
 
@@ -39,7 +39,7 @@ namespace glm
 #	endif
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER T fmin(T a, T b, T c)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T fmin(T a, T b, T c)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'fmin' only accept floating-point input");
 
@@ -53,7 +53,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER T fmin(T a, T b, T c, T d)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T fmin(T a, T b, T c, T d)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'fmin' only accept floating-point input");
 
@@ -84,7 +84,7 @@ namespace glm
 #	endif
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER T fmax(T a, T b, T c)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T fmax(T a, T b, T c)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'fmax' only accept floating-point input");
 
@@ -98,7 +98,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER T fmax(T a, T b, T c, T d)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T fmax(T a, T b, T c, T d)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'fmax' only accept floating-point input");
 

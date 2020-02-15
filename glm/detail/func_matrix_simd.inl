@@ -60,7 +60,7 @@ namespace detail
 
 #	if GLM_CONFIG_ALIGNED_GENTYPES == GLM_ENABLE
 	template<>
-	GLM_FUNC_QUALIFIER mat<4, 4, float, aligned_lowp> outerProduct<4, 4, float, aligned_lowp>(vec<4, float, aligned_lowp> const& c, vec<4, float, aligned_lowp> const& r)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, float, aligned_lowp> outerProduct<4, 4, float, aligned_lowp>(vec<4, float, aligned_lowp> const& c, vec<4, float, aligned_lowp> const& r)
 	{
 		__m128 NativeResult[4];
 		glm_mat4_outerProduct(c.data, r.data, NativeResult);
@@ -70,7 +70,7 @@ namespace detail
 	}
 
 	template<>
-	GLM_FUNC_QUALIFIER mat<4, 4, float, aligned_mediump> outerProduct<4, 4, float, aligned_mediump>(vec<4, float, aligned_mediump> const& c, vec<4, float, aligned_mediump> const& r)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, float, aligned_mediump> outerProduct<4, 4, float, aligned_mediump>(vec<4, float, aligned_mediump> const& c, vec<4, float, aligned_mediump> const& r)
 	{
 		__m128 NativeResult[4];
 		glm_mat4_outerProduct(c.data, r.data, NativeResult);
@@ -80,7 +80,7 @@ namespace detail
 	}
 
 	template<>
-	GLM_FUNC_QUALIFIER mat<4, 4, float, aligned_highp> outerProduct<4, 4, float, aligned_highp>(vec<4, float, aligned_highp> const& c, vec<4, float, aligned_highp> const& r)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, float, aligned_highp> outerProduct<4, 4, float, aligned_highp>(vec<4, float, aligned_highp> const& c, vec<4, float, aligned_highp> const& r)
 	{
 		__m128 NativeResult[4];
 		glm_mat4_outerProduct(c.data, r.data, NativeResult);
@@ -96,7 +96,7 @@ namespace detail
 namespace glm {
 #if GLM_LANG & GLM_LANG_CXX11_FLAG
 	template <qualifier Q>
-	GLM_FUNC_QUALIFIER
+	GLM_NODISCARD GLM_FUNC_QUALIFIER
 	typename std::enable_if<detail::is_aligned<Q>::value, mat<4, 4, float, Q>>::type
 	operator*(mat<4, 4, float, Q> const & m1, mat<4, 4, float, Q> const & m2)
 	{

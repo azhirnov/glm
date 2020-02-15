@@ -69,7 +69,7 @@ namespace detail
 	// pow
 	using std::pow;
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> pow(vec<L, T, Q> const& base, vec<L, T, Q> const& exponent)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> pow(vec<L, T, Q> const& base, vec<L, T, Q> const& exponent)
 	{
 		return detail::functor2<vec, L, T, Q>::call(pow, base, exponent);
 	}
@@ -77,7 +77,7 @@ namespace detail
 	// exp
 	using std::exp;
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> exp(vec<L, T, Q> const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> exp(vec<L, T, Q> const& x)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(exp, x);
 	}
@@ -85,7 +85,7 @@ namespace detail
 	// log
 	using std::log;
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> log(vec<L, T, Q> const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> log(vec<L, T, Q> const& x)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(log, x);
 	}
@@ -95,7 +95,7 @@ namespace detail
 #   else
 	//exp2, ln2 = 0.69314718055994530941723212145818f
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType exp2(genType x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType exp2(genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'exp2' only accept floating-point inputs");
 
@@ -104,20 +104,20 @@ namespace detail
 #   endif
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> exp2(vec<L, T, Q> const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> exp2(vec<L, T, Q> const& x)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(exp2, x);
 	}
 
 	// log2, ln2 = 0.69314718055994530941723212145818f
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType log2(genType x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType log2(genType x)
 	{
 		return log2(vec<1, genType>(x)).x;
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> log2(vec<L, T, Q> const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> log2(vec<L, T, Q> const& x)
 	{
 		return detail::compute_log2<L, T, Q, std::numeric_limits<T>::is_iec559, detail::is_aligned<Q>::value>::call(x);
 	}
@@ -125,7 +125,7 @@ namespace detail
 	// sqrt
 	using std::sqrt;
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> sqrt(vec<L, T, Q> const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> sqrt(vec<L, T, Q> const& x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'sqrt' only accept floating-point inputs");
 		return detail::compute_sqrt<L, T, Q, detail::is_aligned<Q>::value>::call(x);
@@ -133,13 +133,13 @@ namespace detail
 
 	// inversesqrt
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType inversesqrt(genType x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType inversesqrt(genType x)
 	{
 		return static_cast<genType>(1) / sqrt(x);
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> inversesqrt(vec<L, T, Q> const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> inversesqrt(vec<L, T, Q> const& x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'inversesqrt' only accept floating-point inputs");
 		return detail::compute_inversesqrt<L, T, Q, detail::is_aligned<Q>::value>::call(x);

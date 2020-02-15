@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<3, 3, T, Q> shearX2D(mat<3, 3, T, Q> const& m, T s)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<3, 3, T, Q> shearX2D(mat<3, 3, T, Q> const& m, T s)
 	{
 		mat<3, 3, T, Q> r(1);
 		r[1][0] = s;
@@ -11,7 +11,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<3, 3, T, Q> shearY2D(mat<3, 3, T, Q> const& m, T s)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<3, 3, T, Q> shearY2D(mat<3, 3, T, Q> const& m, T s)
 	{
 		mat<3, 3, T, Q> r(1);
 		r[0][1] = s;
@@ -19,7 +19,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> shearX3D(mat<4, 4, T, Q> const& m, T s, T t)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> shearX3D(mat<4, 4, T, Q> const& m, T s, T t)
 	{
 		mat<4, 4, T, Q> r(1);
 		r[0][1] = s;
@@ -28,7 +28,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> shearY3D(mat<4, 4, T, Q> const& m, T s, T t)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> shearY3D(mat<4, 4, T, Q> const& m, T s, T t)
 	{
 		mat<4, 4, T, Q> r(1);
 		r[1][0] = s;
@@ -37,7 +37,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> shearZ3D(mat<4, 4, T, Q> const& m, T s, T t)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> shearZ3D(mat<4, 4, T, Q> const& m, T s, T t)
 	{
 		mat<4, 4, T, Q> r(1);
 		r[2][0] = s;
@@ -46,7 +46,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<3, 3, T, Q> reflect2D(mat<3, 3, T, Q> const& m, vec<3, T, Q> const& normal)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<3, 3, T, Q> reflect2D(mat<3, 3, T, Q> const& m, vec<3, T, Q> const& normal)
 	{
 		mat<3, 3, T, Q> r(static_cast<T>(1));
 		r[0][0] = static_cast<T>(1) - static_cast<T>(2) * normal.x * normal.x;
@@ -57,7 +57,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> reflect3D(mat<4, 4, T, Q> const& m, vec<3, T, Q> const& normal)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> reflect3D(mat<4, 4, T, Q> const& m, vec<3, T, Q> const& normal)
 	{
 		mat<4, 4, T, Q> r(static_cast<T>(1));
 		r[0][0] = static_cast<T>(1) - static_cast<T>(2) * normal.x * normal.x;
@@ -75,7 +75,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<3, 3, T, Q> proj2D(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<3, 3, T, Q> proj2D(
 		const mat<3, 3, T, Q>& m,
 		const vec<3, T, Q>& normal)
 	{
@@ -88,7 +88,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> proj3D(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> proj3D(
 		const mat<4, 4, T, Q>& m,
 		const vec<3, T, Q>& normal)
 	{
@@ -106,7 +106,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> scaleBias(T scale, T bias)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> scaleBias(T scale, T bias)
 	{
 		mat<4, 4, T, Q> result;
 		result[3] = vec<4, T, Q>(vec<3, T, Q>(bias), static_cast<T>(1));
@@ -117,7 +117,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> scaleBias(mat<4, 4, T, Q> const& m, T scale, T bias)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> scaleBias(mat<4, 4, T, Q> const& m, T scale, T bias)
 	{
 		return m * scaleBias(scale, bias);
 	}

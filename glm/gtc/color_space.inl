@@ -49,14 +49,14 @@ namespace detail
 }//namespace detail
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> convertLinearToSRGB(vec<L, T, Q> const& ColorLinear)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> convertLinearToSRGB(vec<L, T, Q> const& ColorLinear)
 	{
 		return detail::compute_rgbToSrgb<L, T, Q>::call(ColorLinear, static_cast<T>(0.41666));
 	}
 
 	// Based on Ian Taylor http://chilliant.blogspot.fr/2012/08/srgb-approximations-for-hlsl.html
 	template<>
-	GLM_FUNC_QUALIFIER vec<3, float, lowp> convertLinearToSRGB(vec<3, float, lowp> const& ColorLinear)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, float, lowp> convertLinearToSRGB(vec<3, float, lowp> const& ColorLinear)
 	{
 		vec<3, float, lowp> S1 = sqrt(ColorLinear);
 		vec<3, float, lowp> S2 = sqrt(S1);
@@ -65,19 +65,19 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> convertLinearToSRGB(vec<L, T, Q> const& ColorLinear, T Gamma)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> convertLinearToSRGB(vec<L, T, Q> const& ColorLinear, T Gamma)
 	{
 		return detail::compute_rgbToSrgb<L, T, Q>::call(ColorLinear, static_cast<T>(1) / Gamma);
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> convertSRGBToLinear(vec<L, T, Q> const& ColorSRGB)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> convertSRGBToLinear(vec<L, T, Q> const& ColorSRGB)
 	{
 		return detail::compute_srgbToRgb<L, T, Q>::call(ColorSRGB, static_cast<T>(2.4));
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> convertSRGBToLinear(vec<L, T, Q> const& ColorSRGB, T Gamma)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> convertSRGBToLinear(vec<L, T, Q> const& ColorSRGB, T Gamma)
 	{
 		return detail::compute_srgbToRgb<L, T, Q>::call(ColorSRGB, Gamma);
 	}

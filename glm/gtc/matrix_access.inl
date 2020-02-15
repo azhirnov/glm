@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType row
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType row
 	(
 		genType const& m,
 		length_t index,
@@ -19,7 +19,7 @@ namespace glm
 	}
 
 	template<typename genType>
-	GLM_FUNC_QUALIFIER typename genType::row_type row
+	GLM_NODISCARD GLM_FUNC_QUALIFIER typename genType::row_type row
 	(
 		genType const& m,
 		length_t index
@@ -34,7 +34,7 @@ namespace glm
 	}
 
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType column
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType column
 	(
 		genType const& m,
 		length_t index,
@@ -49,7 +49,7 @@ namespace glm
 	}
 
 	template<typename genType>
-	GLM_FUNC_QUALIFIER typename genType::col_type column
+	GLM_NODISCARD GLM_FUNC_QUALIFIER typename genType::col_type column
 	(
 		genType const& m,
 		length_t index

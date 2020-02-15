@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> exp(qua<T, Q> const& q)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q> exp(qua<T, Q> const& q)
 	{
 		vec<3, T, Q> u(q.x, q.y, q.z);
 		T const Angle = glm::length(u);
@@ -15,7 +15,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> log(qua<T, Q> const& q)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q> log(qua<T, Q> const& q)
 	{
 		vec<3, T, Q> u(q.x, q.y, q.z);
 		T Vec3Len = length(u);
@@ -38,7 +38,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> pow(qua<T, Q> const& x, T y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q> pow(qua<T, Q> const& x, T y)
 	{
 		//Raising to the power of 0 should yield 1
 		//Needed to prevent a division by 0 error later on
@@ -76,7 +76,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> sqrt(qua<T, Q> const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q> sqrt(qua<T, Q> const& x)
 	{
 		return pow(x, static_cast<T>(0.5));
 	}

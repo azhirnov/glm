@@ -5,7 +5,7 @@
 namespace glm
 {
 	template<typename T>
-	GLM_FUNC_QUALIFIER T gauss
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T gauss
 	(
 		T x,
 		T ExpectedValue,
@@ -16,7 +16,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER T gauss
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T gauss
 	(
 		vec<2, T, Q> const& Coord,
 		vec<2, T, Q> const& ExpectedValue,

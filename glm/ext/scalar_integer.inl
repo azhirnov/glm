@@ -157,7 +157,7 @@ namespace detail
 }//namespace detail
 
 	template<typename genIUType>
-	GLM_FUNC_QUALIFIER bool isPowerOfTwo(genIUType Value)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER bool isPowerOfTwo(genIUType Value)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genIUType>::is_integer, "'isPowerOfTwo' only accept integer inputs");
 
@@ -166,7 +166,7 @@ namespace detail
 	}
 
 	template<typename genIUType>
-	GLM_FUNC_QUALIFIER genIUType nextPowerOfTwo(genIUType value)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genIUType nextPowerOfTwo(genIUType value)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genIUType>::is_integer, "'nextPowerOfTwo' only accept integer inputs");
 
@@ -174,7 +174,7 @@ namespace detail
 	}
 
 	template<typename genIUType>
-	GLM_FUNC_QUALIFIER genIUType prevPowerOfTwo(genIUType value)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genIUType prevPowerOfTwo(genIUType value)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genIUType>::is_integer, "'prevPowerOfTwo' only accept integer inputs");
 
@@ -182,7 +182,7 @@ namespace detail
 	}
 
 	template<typename genIUType>
-	GLM_FUNC_QUALIFIER bool isMultiple(genIUType Value, genIUType Multiple)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER bool isMultiple(genIUType Value, genIUType Multiple)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genIUType>::is_integer, "'isMultiple' only accept integer inputs");
 
@@ -190,7 +190,7 @@ namespace detail
 	}
 
 	template<typename genIUType>
-	GLM_FUNC_QUALIFIER genIUType nextMultiple(genIUType Source, genIUType Multiple)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genIUType nextMultiple(genIUType Source, genIUType Multiple)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genIUType>::is_integer, "'nextMultiple' only accept integer inputs");
 
@@ -198,7 +198,7 @@ namespace detail
 	}
 
 	template<typename genIUType>
-	GLM_FUNC_QUALIFIER genIUType prevMultiple(genIUType Source, genIUType Multiple)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genIUType prevMultiple(genIUType Source, genIUType Multiple)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genIUType>::is_integer, "'prevMultiple' only accept integer inputs");
 
@@ -206,7 +206,7 @@ namespace detail
 	}
 
 	template<typename genIUType>
-	GLM_FUNC_QUALIFIER int findNSB(genIUType x, int significantBitCount)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int findNSB(genIUType x, int significantBitCount)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genIUType>::is_integer, "'findNSB' only accept integer inputs");
 

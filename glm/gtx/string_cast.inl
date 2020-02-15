@@ -484,7 +484,7 @@ namespace detail
 }//namespace detail
 
 template<class matType>
-GLM_FUNC_QUALIFIER std::string to_string(matType const& x)
+GLM_NODISCARD GLM_FUNC_QUALIFIER std::string to_string(matType const& x)
 {
 	return detail::compute_to_string<matType>::call(x);
 }

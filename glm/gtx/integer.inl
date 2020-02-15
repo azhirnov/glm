@@ -3,7 +3,7 @@
 namespace glm
 {
 	// pow
-	GLM_FUNC_QUALIFIER int pow(int x, uint y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int pow(int x, uint y)
 	{
 		if(y == 0)
 			return x >= 0 ? 1 : -1;
@@ -15,7 +15,7 @@ namespace glm
 	}
 
 	// sqrt: From Christopher J. Musial, An integer square root, Graphics Gems, 1990, page 387
-	GLM_FUNC_QUALIFIER int sqrt(int x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int sqrt(int x)
 	{
 		if(x <= 1) return x;
 
@@ -63,14 +63,14 @@ namespace detail
 	}
 */
 	// mod
-	GLM_FUNC_QUALIFIER int mod(int x, int y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int mod(int x, int y)
 	{
 		return ((x % y) + y) % y;
 	}
 
 	// factorial (!12 max, integer only)
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType factorial(genType const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType factorial(genType const& x)
 	{
 		genType Temp = x;
 		genType Result;
@@ -80,7 +80,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<2, T, Q> factorial(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<2, T, Q> factorial(
 		vec<2, T, Q> const& x)
 	{
 		return vec<2, T, Q>(
@@ -89,7 +89,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> factorial(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> factorial(
 		vec<3, T, Q> const& x)
 	{
 		return vec<3, T, Q>(
@@ -99,7 +99,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<4, T, Q> factorial(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, T, Q> factorial(
 		vec<4, T, Q> const& x)
 	{
 		return vec<4, T, Q>(
@@ -109,7 +109,7 @@ namespace detail
 			factorial(x.w));
 	}
 
-	GLM_FUNC_QUALIFIER uint pow(uint x, uint y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint pow(uint x, uint y)
 	{
 		if (y == 0)
 			return 1u;
@@ -120,7 +120,7 @@ namespace detail
 		return result;
 	}
 
-	GLM_FUNC_QUALIFIER uint sqrt(uint x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint sqrt(uint x)
 	{
 		if(x <= 1) return x;
 
@@ -136,14 +136,14 @@ namespace detail
 		return CurrentAnswer;
 	}
 
-	GLM_FUNC_QUALIFIER uint mod(uint x, uint y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint mod(uint x, uint y)
 	{
 		return x - y * (x / y);
 	}
 
 #if(GLM_COMPILER & (GLM_COMPILER_VC | GLM_COMPILER_GCC))
 
-	GLM_FUNC_QUALIFIER unsigned int nlz(unsigned int x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER unsigned int nlz(unsigned int x)
 	{
 		return 31u - findMSB(x);
 	}
@@ -151,7 +151,7 @@ namespace detail
 #else
 
 	// Hackers Delight: http://www.hackersdelight.org/HDcode/nlz.c.txt
-	GLM_FUNC_QUALIFIER unsigned int nlz(unsigned int x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER unsigned int nlz(unsigned int x)
 	{
 		int y, m, n;
 

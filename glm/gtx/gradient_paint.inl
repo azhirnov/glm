@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER T radialGradient
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T radialGradient
 	(
 		vec<2, T, Q> const& Center,
 		T const& Radius,
@@ -23,7 +23,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER T linearGradient
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T linearGradient
 	(
 		vec<2, T, Q> const& Point0,
 		vec<2, T, Q> const& Point1,

@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType catmullRom
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType catmullRom
 	(
 		genType const& v1,
 		genType const& v2,
@@ -25,7 +25,7 @@ namespace glm
 	}
 
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType hermite
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType hermite
 	(
 		genType const& v1,
 		genType const& t1,
@@ -46,7 +46,7 @@ namespace glm
 	}
 
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType cubic
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType cubic
 	(
 		genType const& v1,
 		genType const& v2,

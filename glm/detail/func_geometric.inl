@@ -125,7 +125,7 @@ namespace detail
 
 	// length
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType length(genType x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType length(genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'length' accepts only floating-point inputs");
 
@@ -133,7 +133,7 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER T length(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T length(vec<L, T, Q> const& v)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'length' accepts only floating-point inputs");
 
@@ -142,7 +142,7 @@ namespace detail
 
 	// distance
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType distance(genType const& p0, genType const& p1)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType distance(genType const& p0, genType const& p1)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'distance' accepts only floating-point inputs");
 
@@ -150,21 +150,21 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER T distance(vec<L, T, Q> const& p0, vec<L, T, Q> const& p1)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T distance(vec<L, T, Q> const& p0, vec<L, T, Q> const& p1)
 	{
 		return detail::compute_distance<L, T, Q, detail::is_aligned<Q>::value>::call(p0, p1);
 	}
 
 	// dot
 	template<typename T>
-	GLM_FUNC_QUALIFIER T dot(T x, T y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T dot(T x, T y)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'dot' accepts only floating-point inputs");
 		return x * y;
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER T dot(vec<L, T, Q> const& x, vec<L, T, Q> const& y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER T dot(vec<L, T, Q> const& x, vec<L, T, Q> const& y)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'dot' accepts only floating-point inputs");
 		return detail::compute_dot<vec<L, T, Q>, T, detail::is_aligned<Q>::value>::call(x, y);
@@ -172,14 +172,14 @@ namespace detail
 
 	// cross
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> cross(vec<3, T, Q> const& x, vec<3, T, Q> const& y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> cross(vec<3, T, Q> const& x, vec<3, T, Q> const& y)
 	{
 		return detail::compute_cross<T, Q, detail::is_aligned<Q>::value>::call(x, y);
 	}
 /*
 	// normalize
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType normalize(genType const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType normalize(genType const& x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'normalize' accepts only floating-point inputs");
 
@@ -187,7 +187,7 @@ namespace detail
 	}
 */
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> normalize(vec<L, T, Q> const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> normalize(vec<L, T, Q> const& x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'normalize' accepts only floating-point inputs");
 
@@ -196,33 +196,33 @@ namespace detail
 
 	// faceforward
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType faceforward(genType const& N, genType const& I, genType const& Nref)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType faceforward(genType const& N, genType const& I, genType const& Nref)
 	{
 		return dot(Nref, I) < static_cast<genType>(0) ? N : -N;
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> faceforward(vec<L, T, Q> const& N, vec<L, T, Q> const& I, vec<L, T, Q> const& Nref)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> faceforward(vec<L, T, Q> const& N, vec<L, T, Q> const& I, vec<L, T, Q> const& Nref)
 	{
 		return detail::compute_faceforward<L, T, Q, detail::is_aligned<Q>::value>::call(N, I, Nref);
 	}
 
 	// reflect
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType reflect(genType const& I, genType const& N)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType reflect(genType const& I, genType const& N)
 	{
 		return I - N * dot(N, I) * genType(2);
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> reflect(vec<L, T, Q> const& I, vec<L, T, Q> const& N)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> reflect(vec<L, T, Q> const& I, vec<L, T, Q> const& N)
 	{
 		return detail::compute_reflect<L, T, Q, detail::is_aligned<Q>::value>::call(I, N);
 	}
 
 	// refract
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType refract(genType const& I, genType const& N, genType eta)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType refract(genType const& I, genType const& N, genType eta)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'refract' accepts only floating-point inputs");
 		genType const dotValue(dot(N, I));
@@ -231,7 +231,7 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> refract(vec<L, T, Q> const& I, vec<L, T, Q> const& N, T eta)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> refract(vec<L, T, Q> const& I, vec<L, T, Q> const& N, T eta)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'refract' accepts only floating-point inputs");
 		return detail::compute_refract<L, T, Q, detail::is_aligned<Q>::value>::call(I, N, eta);

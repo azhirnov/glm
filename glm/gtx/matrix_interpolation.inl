@@ -88,7 +88,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> axisAngleMatrix(vec<3, T, Q> const& axis, T const angle)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> axisAngleMatrix(vec<3, T, Q> const& axis, T const angle)
 	{
 		T c = cos(angle);
 		T s = sin(angle);
@@ -103,7 +103,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> extractMatrixRotation(mat<4, 4, T, Q> const& m)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> extractMatrixRotation(mat<4, 4, T, Q> const& m)
 	{
 		return mat<4, 4, T, Q>(
 			m[0][0], m[0][1], m[0][2], static_cast<T>(0.0),
@@ -113,7 +113,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> interpolate(mat<4, 4, T, Q> const& m1, mat<4, 4, T, Q> const& m2, T const delta)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> interpolate(mat<4, 4, T, Q> const& m1, mat<4, 4, T, Q> const& m2, T const delta)
 	{
 		mat<4, 4, T, Q> m1rot = extractMatrixRotation(m1);
 		mat<4, 4, T, Q> dltRotation = m2 * transpose(m1rot);

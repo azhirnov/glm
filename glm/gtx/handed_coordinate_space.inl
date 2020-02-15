@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER bool rightHanded
+	GLM_NODISCARD GLM_FUNC_QUALIFIER bool rightHanded
 	(
 		vec<3, T, Q> const& tangent,
 		vec<3, T, Q> const& binormal,
@@ -14,7 +14,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER bool leftHanded
+	GLM_NODISCARD GLM_FUNC_QUALIFIER bool leftHanded
 	(
 		vec<3, T, Q> const& tangent,
 		vec<3, T, Q> const& binormal,
