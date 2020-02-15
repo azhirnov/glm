@@ -1112,7 +1112,7 @@ namespace detail
 	
 #if GLM_VEC_EQUAL_OP
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, bool, Q> operator==(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, bool, Q> operator==(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
 	{
 		return vec<4, bool, Q>(
 			detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.x, v2.x),
@@ -1122,7 +1122,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, bool, Q> operator!=(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, bool, Q> operator!=(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
 	{
 		return vec<4, bool, Q>(
 			!detail::compute_equal<T, std::numeric_limits<T>::is_iec559>::call(v1.x, v2.x),
@@ -1132,13 +1132,13 @@ namespace detail
 	}
 #else
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator==(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator==(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
 	{
 		return detail::compute_vec4_equal<T, Q, detail::is_int<T>::value, sizeof(T) * 8, detail::is_aligned<Q>::value>::call(v1, v2);
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator!=(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator!=(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
 	{
 		return detail::compute_vec4_nequal<T, Q, detail::is_int<T>::value, sizeof(T) * 8, detail::is_aligned<Q>::value>::call(v1, v2);
 	}
