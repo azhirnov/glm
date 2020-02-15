@@ -77,7 +77,7 @@ namespace detail
 }//namespace detail
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER bool areCollinear(vec<L, T, Q> const& v0, vec<L, T, Q> const& v1, T const& epsilon)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER bool areCollinear(vec<L, T, Q> const& v0, vec<L, T, Q> const& v1, T const& epsilon)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'areCollinear' only accept floating-point inputs");
 
@@ -85,7 +85,7 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER bool areOrthogonal(vec<L, T, Q> const& v0, vec<L, T, Q> const& v1, T const& epsilon)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER bool areOrthogonal(vec<L, T, Q> const& v0, vec<L, T, Q> const& v1, T const& epsilon)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'areOrthogonal' only accept floating-point inputs");
 
@@ -95,7 +95,7 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER bool isNormalized(vec<L, T, Q> const& v, T const& epsilon)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER bool isNormalized(vec<L, T, Q> const& v, T const& epsilon)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'isNormalized' only accept floating-point inputs");
 
@@ -103,7 +103,7 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER bool isNull(vec<L, T, Q> const& v, T const& epsilon)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER bool isNull(vec<L, T, Q> const& v, T const& epsilon)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'isNull' only accept floating-point inputs");
 
@@ -111,7 +111,7 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, bool, Q> isCompNull(vec<L, T, Q> const& v, T const& epsilon)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, bool, Q> isCompNull(vec<L, T, Q> const& v, T const& epsilon)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'isCompNull' only accept floating-point inputs");
 
@@ -119,7 +119,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<2, bool, Q> isCompNull(vec<2, T, Q> const& v, T const& epsilon)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<2, bool, Q> isCompNull(vec<2, T, Q> const& v, T const& epsilon)
 	{
 		return vec<2, bool, Q>(
 			abs(v.x) < epsilon,
@@ -127,7 +127,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, bool, Q> isCompNull(vec<3, T, Q> const& v, T const& epsilon)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, bool, Q> isCompNull(vec<3, T, Q> const& v, T const& epsilon)
 	{
 		return vec<3, bool, Q>(
 			abs(v.x) < epsilon,
@@ -136,7 +136,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<4, bool, Q> isCompNull(vec<4, T, Q> const& v, T const& epsilon)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, bool, Q> isCompNull(vec<4, T, Q> const& v, T const& epsilon)
 	{
 		return vec<4, bool, Q>(
 			abs(v.x) < epsilon,
@@ -146,7 +146,7 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER bool areOrthonormal(vec<L, T, Q> const& v0, vec<L, T, Q> const& v1, T const& epsilon)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER bool areOrthonormal(vec<L, T, Q> const& v0, vec<L, T, Q> const& v1, T const& epsilon)
 	{
 		return isNormalized(v0, epsilon) && isNormalized(v1, epsilon) && (abs(dot(v0, v1)) <= epsilon);
 	}

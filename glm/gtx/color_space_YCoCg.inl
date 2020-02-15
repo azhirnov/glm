@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> rgb2YCoCg
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> rgb2YCoCg
 	(
 		vec<3, T, Q> const& rgbColor
 	)
@@ -16,7 +16,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> YCoCg2rgb
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> YCoCg2rgb
 	(
 		vec<3, T, Q> const& YCoCgColor
 	)
@@ -88,7 +88,7 @@ namespace glm
 	};
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> rgb2YCoCgR
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> rgb2YCoCgR
 	(
 		vec<3, T, Q> const& rgbColor
 	)
@@ -97,7 +97,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> YCoCgR2rgb
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> YCoCgR2rgb
 	(
 		vec<3, T, Q> const& YCoCgRColor
 	)

@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> closestPointOnLine
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> closestPointOnLine
 	(
 		vec<3, T, Q> const& point,
 		vec<3, T, Q> const& a,
@@ -23,7 +23,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<2, T, Q> closestPointOnLine
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<2, T, Q> closestPointOnLine
 	(
 		vec<2, T, Q> const& point,
 		vec<2, T, Q> const& a,

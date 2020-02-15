@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> rotateNormalizedAxis
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> rotateNormalizedAxis
 	(
 		mat<4, 4, T, Q> const& m,
 		T const& angle,
@@ -40,7 +40,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> rotateNormalizedAxis
+	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q> rotateNormalizedAxis
 	(
 		qua<T, Q> const& q,
 		T const& angle,

@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> triangleNormal
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> triangleNormal
 	(
 		vec<3, T, Q> const& p1,
 		vec<3, T, Q> const& p2,

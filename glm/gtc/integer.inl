@@ -31,7 +31,7 @@ namespace detail
 #	endif//GLM_HAS_BITSCAN_WINDOWS
 }//namespace detail
 	template<typename genType>
-	GLM_FUNC_QUALIFIER int iround(genType x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int iround(genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'iround' only accept floating-point inputs");
 		assert(static_cast<genType>(0.0) <= x);
@@ -40,7 +40,7 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, int, Q> iround(vec<L, T, Q> const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, int, Q> iround(vec<L, T, Q> const& x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'iround' only accept floating-point inputs");
 		assert(all(lessThanEqual(vec<L, T, Q>(0), x)));
@@ -49,7 +49,7 @@ namespace detail
 	}
 
 	template<typename genType>
-	GLM_FUNC_QUALIFIER uint uround(genType x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint uround(genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'uround' only accept floating-point inputs");
 		assert(static_cast<genType>(0.0) <= x);
@@ -58,7 +58,7 @@ namespace detail
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, uint, Q> uround(vec<L, T, Q> const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, uint, Q> uround(vec<L, T, Q> const& x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'uround' only accept floating-point inputs");
 		assert(all(lessThanEqual(vec<L, T, Q>(0), x)));

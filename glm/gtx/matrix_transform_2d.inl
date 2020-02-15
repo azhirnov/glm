@@ -7,7 +7,7 @@ namespace glm
 {
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<3, 3, T, Q> translate(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<3, 3, T, Q> translate(
 		mat<3, 3, T, Q> const& m,
 		vec<2, T, Q> const& v)
 	{
@@ -18,7 +18,7 @@ namespace glm
 
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<3, 3, T, Q> rotate(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<3, 3, T, Q> rotate(
 		mat<3, 3, T, Q> const& m,
 		T angle)
 	{
@@ -34,7 +34,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<3, 3, T, Q> scale(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<3, 3, T, Q> scale(
 		mat<3, 3, T, Q> const& m,
 		vec<2, T, Q> const& v)
 	{
@@ -46,7 +46,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<3, 3, T, Q> shearX(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<3, 3, T, Q> shearX(
 		mat<3, 3, T, Q> const& m,
 		T y)
 	{
@@ -56,7 +56,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<3, 3, T, Q> shearY(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<3, 3, T, Q> shearY(
 		mat<3, 3, T, Q> const& m,
 		T x)
 	{

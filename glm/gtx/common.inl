@@ -27,7 +27,7 @@ namespace detail
 }//namespace detail
 
 	template<typename T>
-	GLM_FUNC_QUALIFIER bool isdenormal(T const& x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER bool isdenormal(T const& x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'isdenormal' only accept floating-point inputs");
 
@@ -39,7 +39,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER typename vec<1, T, Q>::bool_type isdenormal
+	GLM_NODISCARD GLM_FUNC_QUALIFIER typename vec<1, T, Q>::bool_type isdenormal
 	(
 		vec<1, T, Q> const& x
 	)
@@ -51,7 +51,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER typename vec<2, T, Q>::bool_type isdenormal
+	GLM_NODISCARD GLM_FUNC_QUALIFIER typename vec<2, T, Q>::bool_type isdenormal
 	(
 		vec<2, T, Q> const& x
 	)
@@ -64,7 +64,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER typename vec<3, T, Q>::bool_type isdenormal
+	GLM_NODISCARD GLM_FUNC_QUALIFIER typename vec<3, T, Q>::bool_type isdenormal
 	(
 		vec<3, T, Q> const& x
 	)
@@ -78,7 +78,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER typename vec<4, T, Q>::bool_type isdenormal
+	GLM_NODISCARD GLM_FUNC_QUALIFIER typename vec<4, T, Q>::bool_type isdenormal
 	(
 		vec<4, T, Q> const& x
 	)
@@ -94,31 +94,31 @@ namespace detail
 
 	// fmod
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType fmod(genType x, genType y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType fmod(genType x, genType y)
 	{
 		return fmod(vec<1, genType>(x), y).x;
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> fmod(vec<L, T, Q> const& x, T y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> fmod(vec<L, T, Q> const& x, T y)
 	{
 		return detail::compute_fmod<L, T, Q, std::numeric_limits<T>::is_iec559>::call(x, vec<L, T, Q>(y));
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> fmod(vec<L, T, Q> const& x, vec<L, T, Q> const& y)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> fmod(vec<L, T, Q> const& x, vec<L, T, Q> const& y)
 	{
 		return detail::compute_fmod<L, T, Q, std::numeric_limits<T>::is_iec559>::call(x, y);
 	}
 
 	template <length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, bool, Q> openBounded(vec<L, T, Q> const& Value, vec<L, T, Q> const& Min, vec<L, T, Q> const& Max)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, bool, Q> openBounded(vec<L, T, Q> const& Value, vec<L, T, Q> const& Min, vec<L, T, Q> const& Max)
 	{
 		return greaterThan(Value, Min) && lessThan(Value, Max);
 	}
 
 	template <length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, bool, Q> closeBounded(vec<L, T, Q> const& Value, vec<L, T, Q> const& Min, vec<L, T, Q> const& Max)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, bool, Q> closeBounded(vec<L, T, Q> const& Value, vec<L, T, Q> const& Min, vec<L, T, Q> const& Max)
 	{
 		return greaterThanEqual(Value, Min) && lessThanEqual(Value, Max);
 	}

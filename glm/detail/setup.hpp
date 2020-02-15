@@ -351,6 +351,12 @@
 #	define GLM_HAS_BITSCAN_WINDOWS 0
 #endif
 
+#if defined(GLM_FORCE_VEC_EQUAL_OP)
+#	define GLM_VEC_EQUAL_OP 1
+#else
+#	define GLM_VEC_EQUAL_OP 0
+#endif
+
 ///////////////////////////////////////////////////////////////////////////////////
 // OpenMP
 #ifdef _OPENMP

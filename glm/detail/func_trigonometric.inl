@@ -6,7 +6,7 @@ namespace glm
 {
 	// radians
 	template<typename genType>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType radians(genType degrees)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType radians(genType degrees)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'radians' only accept floating-point input");
 
@@ -14,14 +14,14 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> radians(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> radians(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(radians, v);
 	}
 
 	// degrees
 	template<typename genType>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType degrees(genType radians)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR genType degrees(genType radians)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'degrees' only accept floating-point input");
 
@@ -29,7 +29,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> degrees(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> degrees(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(degrees, v);
 	}
@@ -38,7 +38,7 @@ namespace glm
 	using ::std::sin;
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> sin(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> sin(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(sin, v);
 	}
@@ -47,7 +47,7 @@ namespace glm
 	using std::cos;
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> cos(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> cos(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(cos, v);
 	}
@@ -56,7 +56,7 @@ namespace glm
 	using std::tan;
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> tan(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> tan(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(tan, v);
 	}
@@ -65,7 +65,7 @@ namespace glm
 	using std::asin;
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> asin(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> asin(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(asin, v);
 	}
@@ -74,14 +74,14 @@ namespace glm
 	using std::acos;
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> acos(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> acos(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(acos, v);
 	}
 
 	// atan
 	template<typename genType>
-	GLM_FUNC_QUALIFIER genType atan(genType y, genType x)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER genType atan(genType y, genType x)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'atan' only accept floating-point input");
 
@@ -89,7 +89,7 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> atan(vec<L, T, Q> const& a, vec<L, T, Q> const& b)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> atan(vec<L, T, Q> const& a, vec<L, T, Q> const& b)
 	{
 		return detail::functor2<vec, L, T, Q>::call(::std::atan2, a, b);
 	}
@@ -97,7 +97,7 @@ namespace glm
 	using std::atan;
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> atan(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> atan(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(atan, v);
 	}
@@ -106,7 +106,7 @@ namespace glm
 	using std::sinh;
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> sinh(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> sinh(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(sinh, v);
 	}
@@ -115,7 +115,7 @@ namespace glm
 	using std::cosh;
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> cosh(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> cosh(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(cosh, v);
 	}
@@ -124,7 +124,7 @@ namespace glm
 	using std::tanh;
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> tanh(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> tanh(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(tanh, v);
 	}
@@ -134,7 +134,7 @@ namespace glm
 		using std::asinh;
 #	else
 		template<typename genType>
-		GLM_FUNC_QUALIFIER genType asinh(genType x)
+		GLM_NODISCARD GLM_FUNC_QUALIFIER genType asinh(genType x)
 		{
 			GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'asinh' only accept floating-point input");
 
@@ -143,7 +143,7 @@ namespace glm
 #	endif
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> asinh(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> asinh(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(asinh, v);
 	}
@@ -153,7 +153,7 @@ namespace glm
 		using std::acosh;
 #	else
 		template<typename genType>
-		GLM_FUNC_QUALIFIER genType acosh(genType x)
+		GLM_NODISCARD GLM_FUNC_QUALIFIER genType acosh(genType x)
 		{
 			GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'acosh' only accept floating-point input");
 
@@ -164,7 +164,7 @@ namespace glm
 #	endif
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> acosh(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> acosh(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(acosh, v);
 	}
@@ -174,7 +174,7 @@ namespace glm
 		using std::atanh;
 #	else
 		template<typename genType>
-		GLM_FUNC_QUALIFIER genType atanh(genType x)
+		GLM_NODISCARD GLM_FUNC_QUALIFIER genType atanh(genType x)
 		{
 			GLM_STATIC_ASSERT(std::numeric_limits<genType>::is_iec559, "'atanh' only accept floating-point input");
 
@@ -185,7 +185,7 @@ namespace glm
 #	endif
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> atanh(vec<L, T, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, T, Q> atanh(vec<L, T, Q> const& v)
 	{
 		return detail::functor1<vec, L, T, T, Q>::call(atanh, v);
 	}

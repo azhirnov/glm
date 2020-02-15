@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> slerp
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> slerp
 	(
 		vec<3, T, Q> const& x,
 		vec<3, T, Q> const& y,
@@ -25,7 +25,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<2, T, Q> rotate
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<2, T, Q> rotate
 	(
 		vec<2, T, Q> const& v,
 		T const& angle
@@ -41,7 +41,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> rotate
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> rotate
 	(
 		vec<3, T, Q> const& v,
 		T const& angle,
@@ -52,7 +52,7 @@ namespace glm
 	}
 	/*
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> rotateGTX(
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> rotateGTX(
 		const vec<3, T, Q>& x,
 		T angle,
 		const vec<3, T, Q>& normal)
@@ -63,7 +63,7 @@ namespace glm
 	}
 	*/
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<4, T, Q> rotate
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, T, Q> rotate
 	(
 		vec<4, T, Q> const& v,
 		T const& angle,
@@ -74,7 +74,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> rotateX
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> rotateX
 	(
 		vec<3, T, Q> const& v,
 		T const& angle
@@ -90,7 +90,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> rotateY
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> rotateY
 	(
 		vec<3, T, Q> const& v,
 		T const& angle
@@ -106,7 +106,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> rotateZ
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> rotateZ
 	(
 		vec<3, T, Q> const& v,
 		T const& angle
@@ -122,7 +122,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<4, T, Q> rotateX
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, T, Q> rotateX
 	(
 		vec<4, T, Q> const& v,
 		T const& angle
@@ -138,7 +138,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<4, T, Q> rotateY
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, T, Q> rotateY
 	(
 		vec<4, T, Q> const& v,
 		T const& angle
@@ -154,7 +154,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<4, T, Q> rotateZ
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, T, Q> rotateZ
 	(
 		vec<4, T, Q> const& v,
 		T const& angle
@@ -170,7 +170,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> orientation
+	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> orientation
 	(
 		vec<3, T, Q> const& Normal,
 		vec<3, T, Q> const& Up

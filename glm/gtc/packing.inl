@@ -352,18 +352,18 @@ namespace detail
 	};
 }//namespace detail
 
-	GLM_FUNC_QUALIFIER uint8 packUnorm1x8(float v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint8 packUnorm1x8(float v)
 	{
 		return static_cast<uint8>(round(clamp(v, 0.0f, 1.0f) * 255.0f));
 	}
 
-	GLM_FUNC_QUALIFIER float unpackUnorm1x8(uint8 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER float unpackUnorm1x8(uint8 p)
 	{
 		float const Unpack(p);
 		return Unpack * static_cast<float>(0.0039215686274509803921568627451); // 1 / 255
 	}
 
-	GLM_FUNC_QUALIFIER uint16 packUnorm2x8(vec2 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint16 packUnorm2x8(vec2 const& v)
 	{
 		u8vec2 const Topack(round(clamp(v, 0.0f, 1.0f) * 255.0f));
 
@@ -372,14 +372,14 @@ namespace detail
 		return Unpack;
 	}
 
-	GLM_FUNC_QUALIFIER vec2 unpackUnorm2x8(uint16 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec2 unpackUnorm2x8(uint16 p)
 	{
 		u8vec2 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return vec2(Unpack) * float(0.0039215686274509803921568627451); // 1 / 255
 	}
 
-	GLM_FUNC_QUALIFIER uint8 packSnorm1x8(float v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint8 packSnorm1x8(float v)
 	{
 		int8 const Topack(static_cast<int8>(round(clamp(v ,-1.0f, 1.0f) * 127.0f)));
 		uint8 Packed = 0;
@@ -387,7 +387,7 @@ namespace detail
 		return Packed;
 	}
 
-	GLM_FUNC_QUALIFIER float unpackSnorm1x8(uint8 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER float unpackSnorm1x8(uint8 p)
 	{
 		int8 Unpack = 0;
 		memcpy(&Unpack, &p, sizeof(Unpack));
@@ -396,7 +396,7 @@ namespace detail
 			-1.0f, 1.0f);
 	}
 
-	GLM_FUNC_QUALIFIER uint16 packSnorm2x8(vec2 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint16 packSnorm2x8(vec2 const& v)
 	{
 		i8vec2 const Topack(round(clamp(v, -1.0f, 1.0f) * 127.0f));
 		uint16 Packed = 0;
@@ -404,7 +404,7 @@ namespace detail
 		return Packed;
 	}
 
-	GLM_FUNC_QUALIFIER vec2 unpackSnorm2x8(uint16 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec2 unpackSnorm2x8(uint16 p)
 	{
 		i8vec2 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
@@ -413,18 +413,18 @@ namespace detail
 			-1.0f, 1.0f);
 	}
 
-	GLM_FUNC_QUALIFIER uint16 packUnorm1x16(float s)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint16 packUnorm1x16(float s)
 	{
 		return static_cast<uint16>(round(clamp(s, 0.0f, 1.0f) * 65535.0f));
 	}
 
-	GLM_FUNC_QUALIFIER float unpackUnorm1x16(uint16 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER float unpackUnorm1x16(uint16 p)
 	{
 		float const Unpack(p);
 		return Unpack * 1.5259021896696421759365224689097e-5f; // 1.0 / 65535.0
 	}
 
-	GLM_FUNC_QUALIFIER uint64 packUnorm4x16(vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint64 packUnorm4x16(vec4 const& v)
 	{
 		u16vec4 const Topack(round(clamp(v , 0.0f, 1.0f) * 65535.0f));
 		uint64 Packed = 0;
@@ -432,14 +432,14 @@ namespace detail
 		return Packed;
 	}
 
-	GLM_FUNC_QUALIFIER vec4 unpackUnorm4x16(uint64 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec4 unpackUnorm4x16(uint64 p)
 	{
 		u16vec4 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return vec4(Unpack) * 1.5259021896696421759365224689097e-5f; // 1.0 / 65535.0
 	}
 
-	GLM_FUNC_QUALIFIER uint16 packSnorm1x16(float v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint16 packSnorm1x16(float v)
 	{
 		int16 const Topack = static_cast<int16>(round(clamp(v ,-1.0f, 1.0f) * 32767.0f));
 		uint16 Packed = 0;
@@ -447,7 +447,7 @@ namespace detail
 		return Packed;
 	}
 
-	GLM_FUNC_QUALIFIER float unpackSnorm1x16(uint16 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER float unpackSnorm1x16(uint16 p)
 	{
 		int16 Unpack = 0;
 		memcpy(&Unpack, &p, sizeof(Unpack));
@@ -456,7 +456,7 @@ namespace detail
 			-1.0f, 1.0f);
 	}
 
-	GLM_FUNC_QUALIFIER uint64 packSnorm4x16(vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint64 packSnorm4x16(vec4 const& v)
 	{
 		i16vec4 const Topack(round(clamp(v ,-1.0f, 1.0f) * 32767.0f));
 		uint64 Packed = 0;
@@ -464,7 +464,7 @@ namespace detail
 		return Packed;
 	}
 
-	GLM_FUNC_QUALIFIER vec4 unpackSnorm4x16(uint64 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec4 unpackSnorm4x16(uint64 p)
 	{
 		i16vec4 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
@@ -473,7 +473,7 @@ namespace detail
 			-1.0f, 1.0f);
 	}
 
-	GLM_FUNC_QUALIFIER uint16 packHalf1x16(float v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint16 packHalf1x16(float v)
 	{
 		int16 const Topack(detail::toFloat16(v));
 		uint16 Packed = 0;
@@ -481,14 +481,14 @@ namespace detail
 		return Packed;
 	}
 
-	GLM_FUNC_QUALIFIER float unpackHalf1x16(uint16 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER float unpackHalf1x16(uint16 v)
 	{
 		int16 Unpack = 0;
 		memcpy(&Unpack, &v, sizeof(Unpack));
 		return detail::toFloat32(Unpack);
 	}
 
-	GLM_FUNC_QUALIFIER uint64 packHalf4x16(glm::vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint64 packHalf4x16(glm::vec4 const& v)
 	{
 		i16vec4 const Unpack(
 			detail::toFloat16(v.x),
@@ -500,7 +500,7 @@ namespace detail
 		return Packed;
 	}
 
-	GLM_FUNC_QUALIFIER glm::vec4 unpackHalf4x16(uint64 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER glm::vec4 unpackHalf4x16(uint64 v)
 	{
 		i16vec4 Unpack;
 		memcpy(&Unpack, &v, sizeof(Unpack));
@@ -511,7 +511,7 @@ namespace detail
 			detail::toFloat32(Unpack.w));
 	}
 
-	GLM_FUNC_QUALIFIER uint32 packI3x10_1x2(ivec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint32 packI3x10_1x2(ivec4 const& v)
 	{
 		detail::i10i10i10i2 Result;
 		Result.data.x = v.x;
@@ -521,7 +521,7 @@ namespace detail
 		return Result.pack;
 	}
 
-	GLM_FUNC_QUALIFIER ivec4 unpackI3x10_1x2(uint32 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER ivec4 unpackI3x10_1x2(uint32 v)
 	{
 		detail::i10i10i10i2 Unpack;
 		Unpack.pack = v;
@@ -532,7 +532,7 @@ namespace detail
 			Unpack.data.w);
 	}
 
-	GLM_FUNC_QUALIFIER uint32 packU3x10_1x2(uvec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint32 packU3x10_1x2(uvec4 const& v)
 	{
 		detail::u10u10u10u2 Result;
 		Result.data.x = v.x;
@@ -542,7 +542,7 @@ namespace detail
 		return Result.pack;
 	}
 
-	GLM_FUNC_QUALIFIER uvec4 unpackU3x10_1x2(uint32 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uvec4 unpackU3x10_1x2(uint32 v)
 	{
 		detail::u10u10u10u2 Unpack;
 		Unpack.pack = v;
@@ -553,7 +553,7 @@ namespace detail
 			Unpack.data.w);
 	}
 
-	GLM_FUNC_QUALIFIER uint32 packSnorm3x10_1x2(vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint32 packSnorm3x10_1x2(vec4 const& v)
 	{
 		ivec4 const Pack(round(clamp(v,-1.0f, 1.0f) * vec4(511.f, 511.f, 511.f, 1.f)));
 
@@ -565,7 +565,7 @@ namespace detail
 		return Result.pack;
 	}
 
-	GLM_FUNC_QUALIFIER vec4 unpackSnorm3x10_1x2(uint32 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec4 unpackSnorm3x10_1x2(uint32 v)
 	{
 		detail::i10i10i10i2 Unpack;
 		Unpack.pack = v;
@@ -575,7 +575,7 @@ namespace detail
 		return clamp(Result * vec4(1.f / 511.f, 1.f / 511.f, 1.f / 511.f, 1.f), -1.0f, 1.0f);
 	}
 
-	GLM_FUNC_QUALIFIER uint32 packUnorm3x10_1x2(vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint32 packUnorm3x10_1x2(vec4 const& v)
 	{
 		uvec4 const Unpack(round(clamp(v, 0.0f, 1.0f) * vec4(1023.f, 1023.f, 1023.f, 3.f)));
 
@@ -587,7 +587,7 @@ namespace detail
 		return Result.pack;
 	}
 
-	GLM_FUNC_QUALIFIER vec4 unpackUnorm3x10_1x2(uint32 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec4 unpackUnorm3x10_1x2(uint32 v)
 	{
 		vec4 const ScaleFactors(1.0f / 1023.f, 1.0f / 1023.f, 1.0f / 1023.f, 1.0f / 3.f);
 
@@ -596,7 +596,7 @@ namespace detail
 		return vec4(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w) * ScaleFactors;
 	}
 
-	GLM_FUNC_QUALIFIER uint32 packF2x11_1x10(vec3 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint32 packF2x11_1x10(vec3 const& v)
 	{
 		return
 			((detail::floatTo11bit(v.x) & ((1 << 11) - 1)) <<  0) |
@@ -604,7 +604,7 @@ namespace detail
 			((detail::floatTo10bit(v.z) & ((1 << 10) - 1)) << 22);
 	}
 
-	GLM_FUNC_QUALIFIER vec3 unpackF2x11_1x10(uint32 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec3 unpackF2x11_1x10(uint32 v)
 	{
 		return vec3(
 			detail::packed11bitToFloat(v >> 0),
@@ -612,7 +612,7 @@ namespace detail
 			detail::packed10bitToFloat(v >> 22));
 	}
 
-	GLM_FUNC_QUALIFIER uint32 packF3x9_E1x5(vec3 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint32 packF3x9_E1x5(vec3 const& v)
 	{
 		float const SharedExpMax = (pow(2.0f, 9.0f - 1.0f) / pow(2.0f, 9.0f)) * pow(2.0f, 31.f - 15.f);
 		vec3 const Color = clamp(v, 0.0f, SharedExpMax);
@@ -632,7 +632,7 @@ namespace detail
 		return Unpack.pack;
 	}
 
-	GLM_FUNC_QUALIFIER vec3 unpackF3x9_E1x5(uint32 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec3 unpackF3x9_E1x5(uint32 v)
 	{
 		detail::u9u9u9e5 Unpack;
 		Unpack.pack = v;
@@ -642,7 +642,7 @@ namespace detail
 
 	// Based on Brian Karis http://graphicrants.blogspot.fr/2009/04/rgbm-color-encoding.html
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<4, T, Q> packRGBM(vec<3, T, Q> const& rgb)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, T, Q> packRGBM(vec<3, T, Q> const& rgb)
 	{
 		vec<3, T, Q> const Color(rgb * static_cast<T>(1.0 / 6.0));
 		T Alpha = clamp(max(max(Color.x, Color.y), max(Color.z, static_cast<T>(1e-6))), static_cast<T>(0), static_cast<T>(1));
@@ -651,25 +651,25 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<3, T, Q> unpackRGBM(vec<4, T, Q> const& rgbm)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> unpackRGBM(vec<4, T, Q> const& rgbm)
 	{
 		return vec<3, T, Q>(rgbm.x, rgbm.y, rgbm.z) * rgbm.w * static_cast<T>(6);
 	}
 
 	template<length_t L, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, uint16, Q> packHalf(vec<L, float, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, uint16, Q> packHalf(vec<L, float, Q> const& v)
 	{
 		return detail::compute_half<L, Q>::pack(v);
 	}
 
 	template<length_t L, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, float, Q> unpackHalf(vec<L, uint16, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, float, Q> unpackHalf(vec<L, uint16, Q> const& v)
 	{
 		return detail::compute_half<L, Q>::unpack(v);
 	}
 
 	template<typename uintType, length_t L, typename floatType, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, uintType, Q> packUnorm(vec<L, floatType, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, uintType, Q> packUnorm(vec<L, floatType, Q> const& v)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<uintType>::is_integer, "uintType must be an integer type");
 		GLM_STATIC_ASSERT(std::numeric_limits<floatType>::is_iec559, "floatType must be a floating point type");
@@ -678,7 +678,7 @@ namespace detail
 	}
 
 	template<typename floatType, length_t L, typename uintType, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, floatType, Q> unpackUnorm(vec<L, uintType, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, floatType, Q> unpackUnorm(vec<L, uintType, Q> const& v)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<uintType>::is_integer, "uintType must be an integer type");
 		GLM_STATIC_ASSERT(std::numeric_limits<floatType>::is_iec559, "floatType must be a floating point type");
@@ -687,7 +687,7 @@ namespace detail
 	}
 
 	template<typename intType, length_t L, typename floatType, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, intType, Q> packSnorm(vec<L, floatType, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, intType, Q> packSnorm(vec<L, floatType, Q> const& v)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<intType>::is_integer, "uintType must be an integer type");
 		GLM_STATIC_ASSERT(std::numeric_limits<floatType>::is_iec559, "floatType must be a floating point type");
@@ -696,7 +696,7 @@ namespace detail
 	}
 
 	template<typename floatType, length_t L, typename intType, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, floatType, Q> unpackSnorm(vec<L, intType, Q> const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<L, floatType, Q> unpackSnorm(vec<L, intType, Q> const& v)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<intType>::is_integer, "uintType must be an integer type");
 		GLM_STATIC_ASSERT(std::numeric_limits<floatType>::is_iec559, "floatType must be a floating point type");
@@ -704,7 +704,7 @@ namespace detail
 		return clamp(vec<L, floatType, Q>(v) * (static_cast<floatType>(1) / static_cast<floatType>(std::numeric_limits<intType>::max())), static_cast<floatType>(-1), static_cast<floatType>(1));
 	}
 
-	GLM_FUNC_QUALIFIER uint8 packUnorm2x4(vec2 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint8 packUnorm2x4(vec2 const& v)
 	{
 		u32vec2 const Unpack(round(clamp(v, 0.0f, 1.0f) * 15.0f));
 		detail::u4u4 Result;
@@ -713,7 +713,7 @@ namespace detail
 		return Result.pack;
 	}
 
-	GLM_FUNC_QUALIFIER vec2 unpackUnorm2x4(uint8 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec2 unpackUnorm2x4(uint8 v)
 	{
 		float const ScaleFactor(1.f / 15.f);
 		detail::u4u4 Unpack;
@@ -721,7 +721,7 @@ namespace detail
 		return vec2(Unpack.data.x, Unpack.data.y) * ScaleFactor;
 	}
 
-	GLM_FUNC_QUALIFIER uint16 packUnorm4x4(vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint16 packUnorm4x4(vec4 const& v)
 	{
 		u32vec4 const Unpack(round(clamp(v, 0.0f, 1.0f) * 15.0f));
 		detail::u4u4u4u4 Result;
@@ -732,7 +732,7 @@ namespace detail
 		return Result.pack;
 	}
 
-	GLM_FUNC_QUALIFIER vec4 unpackUnorm4x4(uint16 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec4 unpackUnorm4x4(uint16 v)
 	{
 		float const ScaleFactor(1.f / 15.f);
 		detail::u4u4u4u4 Unpack;
@@ -740,7 +740,7 @@ namespace detail
 		return vec4(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w) * ScaleFactor;
 	}
 
-	GLM_FUNC_QUALIFIER uint16 packUnorm1x5_1x6_1x5(vec3 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint16 packUnorm1x5_1x6_1x5(vec3 const& v)
 	{
 		u32vec3 const Unpack(round(clamp(v, 0.0f, 1.0f) * vec3(31.f, 63.f, 31.f)));
 		detail::u5u6u5 Result;
@@ -750,7 +750,7 @@ namespace detail
 		return Result.pack;
 	}
 
-	GLM_FUNC_QUALIFIER vec3 unpackUnorm1x5_1x6_1x5(uint16 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec3 unpackUnorm1x5_1x6_1x5(uint16 v)
 	{
 		vec3 const ScaleFactor(1.f / 31.f, 1.f / 63.f, 1.f / 31.f);
 		detail::u5u6u5 Unpack;
@@ -758,7 +758,7 @@ namespace detail
 		return vec3(Unpack.data.x, Unpack.data.y, Unpack.data.z) * ScaleFactor;
 	}
 
-	GLM_FUNC_QUALIFIER uint16 packUnorm3x5_1x1(vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint16 packUnorm3x5_1x1(vec4 const& v)
 	{
 		u32vec4 const Unpack(round(clamp(v, 0.0f, 1.0f) * vec4(31.f, 31.f, 31.f, 1.f)));
 		detail::u5u5u5u1 Result;
@@ -769,7 +769,7 @@ namespace detail
 		return Result.pack;
 	}
 
-	GLM_FUNC_QUALIFIER vec4 unpackUnorm3x5_1x1(uint16 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec4 unpackUnorm3x5_1x1(uint16 v)
 	{
 		vec4 const ScaleFactor(1.f / 31.f, 1.f / 31.f, 1.f / 31.f, 1.f);
 		detail::u5u5u5u1 Unpack;
@@ -777,7 +777,7 @@ namespace detail
 		return vec4(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w) * ScaleFactor;
 	}
 
-	GLM_FUNC_QUALIFIER uint8 packUnorm2x3_1x2(vec3 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint8 packUnorm2x3_1x2(vec3 const& v)
 	{
 		u32vec3 const Unpack(round(clamp(v, 0.0f, 1.0f) * vec3(7.f, 7.f, 3.f)));
 		detail::u3u3u2 Result;
@@ -787,7 +787,7 @@ namespace detail
 		return Result.pack;
 	}
 
-	GLM_FUNC_QUALIFIER vec3 unpackUnorm2x3_1x2(uint8 v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER vec3 unpackUnorm2x3_1x2(uint8 v)
 	{
 		vec3 const ScaleFactor(1.f / 7.f, 1.f / 7.f, 1.f / 3.f);
 		detail::u3u3u2 Unpack;
@@ -795,140 +795,140 @@ namespace detail
 		return vec3(Unpack.data.x, Unpack.data.y, Unpack.data.z) * ScaleFactor;
 	}
 
-	GLM_FUNC_QUALIFIER int16 packInt2x8(i8vec2 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int16 packInt2x8(i8vec2 const& v)
 	{
 		int16 Pack = 0;
 		memcpy(&Pack, &v, sizeof(Pack));
 		return Pack;
 	}
 
-	GLM_FUNC_QUALIFIER i8vec2 unpackInt2x8(int16 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER i8vec2 unpackInt2x8(int16 p)
 	{
 		i8vec2 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return Unpack;
 	}
 
-	GLM_FUNC_QUALIFIER uint16 packUint2x8(u8vec2 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint16 packUint2x8(u8vec2 const& v)
 	{
 		uint16 Pack = 0;
 		memcpy(&Pack, &v, sizeof(Pack));
 		return Pack;
 	}
 
-	GLM_FUNC_QUALIFIER u8vec2 unpackUint2x8(uint16 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER u8vec2 unpackUint2x8(uint16 p)
 	{
 		u8vec2 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return Unpack;
 	}
 
-	GLM_FUNC_QUALIFIER int32 packInt4x8(i8vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int32 packInt4x8(i8vec4 const& v)
 	{
 		int32 Pack = 0;
 		memcpy(&Pack, &v, sizeof(Pack));
 		return Pack;
 	}
 
-	GLM_FUNC_QUALIFIER i8vec4 unpackInt4x8(int32 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER i8vec4 unpackInt4x8(int32 p)
 	{
 		i8vec4 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return Unpack;
 	}
 
-	GLM_FUNC_QUALIFIER uint32 packUint4x8(u8vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint32 packUint4x8(u8vec4 const& v)
 	{
 		uint32 Pack = 0;
 		memcpy(&Pack, &v, sizeof(Pack));
 		return Pack;
 	}
 
-	GLM_FUNC_QUALIFIER u8vec4 unpackUint4x8(uint32 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER u8vec4 unpackUint4x8(uint32 p)
 	{
 		u8vec4 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return Unpack;
 	}
 
-	GLM_FUNC_QUALIFIER int packInt2x16(i16vec2 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int packInt2x16(i16vec2 const& v)
 	{
 		int Pack = 0;
 		memcpy(&Pack, &v, sizeof(Pack));
 		return Pack;
 	}
 
-	GLM_FUNC_QUALIFIER i16vec2 unpackInt2x16(int p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER i16vec2 unpackInt2x16(int p)
 	{
 		i16vec2 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return Unpack;
 	}
 
-	GLM_FUNC_QUALIFIER int64 packInt4x16(i16vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int64 packInt4x16(i16vec4 const& v)
 	{
 		int64 Pack = 0;
 		memcpy(&Pack, &v, sizeof(Pack));
 		return Pack;
 	}
 
-	GLM_FUNC_QUALIFIER i16vec4 unpackInt4x16(int64 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER i16vec4 unpackInt4x16(int64 p)
 	{
 		i16vec4 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return Unpack;
 	}
 
-	GLM_FUNC_QUALIFIER uint packUint2x16(u16vec2 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint packUint2x16(u16vec2 const& v)
 	{
 		uint Pack = 0;
 		memcpy(&Pack, &v, sizeof(Pack));
 		return Pack;
 	}
 
-	GLM_FUNC_QUALIFIER u16vec2 unpackUint2x16(uint p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER u16vec2 unpackUint2x16(uint p)
 	{
 		u16vec2 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return Unpack;
 	}
 
-	GLM_FUNC_QUALIFIER uint64 packUint4x16(u16vec4 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint64 packUint4x16(u16vec4 const& v)
 	{
 		uint64 Pack = 0;
 		memcpy(&Pack, &v, sizeof(Pack));
 		return Pack;
 	}
 
-	GLM_FUNC_QUALIFIER u16vec4 unpackUint4x16(uint64 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER u16vec4 unpackUint4x16(uint64 p)
 	{
 		u16vec4 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return Unpack;
 	}
 
-	GLM_FUNC_QUALIFIER int64 packInt2x32(i32vec2 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER int64 packInt2x32(i32vec2 const& v)
 	{
 		int64 Pack = 0;
 		memcpy(&Pack, &v, sizeof(Pack));
 		return Pack;
 	}
 
-	GLM_FUNC_QUALIFIER i32vec2 unpackInt2x32(int64 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER i32vec2 unpackInt2x32(int64 p)
 	{
 		i32vec2 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
 		return Unpack;
 	}
 
-	GLM_FUNC_QUALIFIER uint64 packUint2x32(u32vec2 const& v)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER uint64 packUint2x32(u32vec2 const& v)
 	{
 		uint64 Pack = 0;
 		memcpy(&Pack, &v, sizeof(Pack));
 		return Pack;
 	}
 
-	GLM_FUNC_QUALIFIER u32vec2 unpackUint2x32(uint64 p)
+	GLM_NODISCARD GLM_FUNC_QUALIFIER u32vec2 unpackUint2x32(uint64 p)
 	{
 		u32vec2 Unpack;
 		memcpy(&Unpack, &p, sizeof(Unpack));
