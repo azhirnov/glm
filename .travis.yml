@@ -50,6 +50,26 @@ matrix:
       env:
         - MATRIX_EVAL="INFO=C++17-avx-debug"
 
+    - os: windows
+      name: Win64 VC2017 Release
+      language: cpp
+      script:
+        - mkdir -p build
+        - cd build
+        - cmake -G "Visual Studio 15 2017 Win64" -T v141 -DGLM_TEST_ENABLE=ON -DGLM_TEST_ENABLE_CXX_17=ON -DGLM_TEST_ENABLE_LANG_EXTENSIONS=ON -DGLM_TEST_ENABLE_SIMD_AVX=ON .. 
+        - cmake --build . --config Release
+        - ctest -C Release --verbose
+        
+    - os: windows
+      name: Win64 VC2017 Debug
+      language: cpp
+      script:
+        - mkdir -p build
+        - cd build
+        - cmake -G "Visual Studio 15 2017 Win64" -T v141 -DGLM_TEST_ENABLE=ON -DGLM_TEST_ENABLE_CXX_17=ON -DGLM_TEST_ENABLE_LANG_EXTENSIONS=ON -DGLM_TEST_ENABLE_SIMD_AVX=ON .. 
+        - cmake --build . --config Debug
+        - ctest -C Debug --verbose
+        
     - os: android
       name: android
       language: android
