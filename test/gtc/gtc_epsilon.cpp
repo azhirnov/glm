@@ -5,23 +5,23 @@
 
 int test_defined()
 {
-	glm::epsilonEqual(glm::vec2(), glm::vec2(), glm::vec2());
-	glm::epsilonEqual(glm::vec3(), glm::vec3(), glm::vec3());
-	glm::epsilonEqual(glm::vec4(), glm::vec4(), glm::vec4());
+	(void)(glm::epsilonEqual(glm::vec2(), glm::vec2(), glm::vec2()));
+	(void)(glm::epsilonEqual(glm::vec3(), glm::vec3(), glm::vec3()));
+	(void)(glm::epsilonEqual(glm::vec4(), glm::vec4(), glm::vec4()));
 
-	glm::epsilonNotEqual(glm::vec2(), glm::vec2(), glm::vec2());
-	glm::epsilonNotEqual(glm::vec3(), glm::vec3(), glm::vec3());
-	glm::epsilonNotEqual(glm::vec4(), glm::vec4(), glm::vec4());
+	(void)(glm::epsilonNotEqual(glm::vec2(), glm::vec2(), glm::vec2()));
+	(void)(glm::epsilonNotEqual(glm::vec3(), glm::vec3(), glm::vec3()));
+	(void)(glm::epsilonNotEqual(glm::vec4(), glm::vec4(), glm::vec4()));
 	
-	glm::epsilonEqual(glm::vec2(), glm::vec2(), 0.0f);
-	glm::epsilonEqual(glm::vec3(), glm::vec3(), 0.0f);
-	glm::epsilonEqual(glm::vec4(), glm::vec4(), 0.0f);
-	glm::epsilonEqual(glm::quat(), glm::quat(), 0.0f);
+	(void)(glm::epsilonEqual(glm::vec2(), glm::vec2(), 0.0f));
+	(void)(glm::epsilonEqual(glm::vec3(), glm::vec3(), 0.0f));
+	(void)(glm::epsilonEqual(glm::vec4(), glm::vec4(), 0.0f));
+	(void)(glm::epsilonEqual(glm::quat(), glm::quat(), 0.0f));
 
-	glm::epsilonNotEqual(glm::vec2(), glm::vec2(), 0.0f);
-	glm::epsilonNotEqual(glm::vec3(), glm::vec3(), 0.0f);
-	glm::epsilonNotEqual(glm::vec4(), glm::vec4(), 0.0f);
-	glm::epsilonNotEqual(glm::quat(), glm::quat(), 0.0f);
+	(void)(glm::epsilonNotEqual(glm::vec2(), glm::vec2(), 0.0f));
+	(void)(glm::epsilonNotEqual(glm::vec3(), glm::vec3(), 0.0f));
+	(void)(glm::epsilonNotEqual(glm::vec4(), glm::vec4(), 0.0f));
+	(void)(glm::epsilonNotEqual(glm::quat(), glm::quat(), 0.0f));
 
 	return 0;
 }
