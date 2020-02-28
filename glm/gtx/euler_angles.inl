@@ -694,7 +694,7 @@ namespace glm
 	}
 
     template<typename T>
-    GLM_NODISCARD GLM_FUNC_DECL void extractEulerAngleXYZ(mat<4, 4, T, defaultp> const& M,
+    GLM_FUNC_DECL void extractEulerAngleXYZ(mat<4, 4, T, defaultp> const& M,
                                             T & t1,
                                             T & t2,
                                             T & t3)
@@ -711,7 +711,7 @@ namespace glm
     }
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleYXZ(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleYXZ(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)
@@ -728,7 +728,7 @@ namespace glm
 	}
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleXZX(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleXZX(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)
@@ -745,7 +745,7 @@ namespace glm
 	}
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleXYX(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleXYX(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)
@@ -762,7 +762,7 @@ namespace glm
 	}
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleYXY(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleYXY(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)
@@ -779,7 +779,7 @@ namespace glm
 	}
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleYZY(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleYZY(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)
@@ -796,7 +796,7 @@ namespace glm
 	}
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleZYZ(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleZYZ(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)
@@ -813,7 +813,7 @@ namespace glm
 	}
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleZXZ(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleZXZ(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)
@@ -830,7 +830,7 @@ namespace glm
 	}
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleXZY(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleXZY(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)
@@ -847,7 +847,7 @@ namespace glm
 	}
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleYZX(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleYZX(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)
@@ -864,7 +864,7 @@ namespace glm
 	}
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleZYX(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleZYX(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)
@@ -881,7 +881,7 @@ namespace glm
 	}
 
 	template <typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER void extractEulerAngleZXY(mat<4, 4, T, defaultp> const & M,
+	GLM_FUNC_QUALIFIER void extractEulerAngleZXY(mat<4, 4, T, defaultp> const & M,
 												 T & t1,
 												 T & t2,
 												 T & t3)

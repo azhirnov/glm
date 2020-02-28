@@ -97,7 +97,7 @@ matrix:
         - export ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle
 
       script:
-        - cd ./android
+        - cd ./test/android
         - chmod +x gradlew
         - ./gradlew build
         
