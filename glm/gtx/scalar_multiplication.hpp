@@ -1,6 +1,9 @@
-/// @ref gtx
+/// @ref gtx_scalar_multiplication
 /// @file glm/gtx/scalar_multiplication.hpp
 /// @author Joshua Moerman
+///
+/// @defgroup gtx_scalar_multiplication GLM_GTX_scalar_multiplication
+/// @ingroup gtx
 ///
 /// Include <glm/gtx/scalar_multiplication.hpp> to use the features of this extension.
 ///
@@ -32,6 +35,9 @@
 
 namespace glm
 {
+	/// @addtogroup gtx_scalar_multiplication
+	/// @{
+
 	template<typename T, typename Vec>
 	using return_type_scalar_multiplication = typename std::enable_if<
 		!std::is_same<T, float>::value       // T may not be a float
@@ -54,7 +60,7 @@ namespace glm
 	template<typename T> \
 	return_type_scalar_multiplication<T, Vec> \
 	operator/(Vec lh, T const& s){ \
-		return lh *= 1.0f / s; \
+		return lh *= 1.0f / static_cast<float>(s); \
 	}
 
 GLM_IMPLEMENT_SCAL_MULT(vec2)
@@ -72,4 +78,5 @@ GLM_IMPLEMENT_SCAL_MULT(mat4x3)
 GLM_IMPLEMENT_SCAL_MULT(mat4)
 
 #undef GLM_IMPLEMENT_SCAL_MULT
+	/// @}
 } // namespace glm
