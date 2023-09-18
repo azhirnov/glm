@@ -49,10 +49,10 @@ namespace glm
 
 		typedef length_t length_type;
 		/// Return the count of components of a dual quaternion
-		GLM_FUNC_DECL static GLM_CONSTEXPR length_type length(){return 2;}
+		GLM_NODISCARD GLM_FUNC_DECL static GLM_CONSTEXPR length_type length(){return 2;}
 
-		GLM_FUNC_DECL part_type & operator[](length_type i);
-		GLM_FUNC_DECL part_type const& operator[](length_type i) const;
+		GLM_NODISCARD GLM_FUNC_DECL part_type & operator[](length_type i);
+		GLM_NODISCARD GLM_FUNC_DECL part_type const& operator[](length_type i) const;
 
 		// -- Implicit basic constructors --
 
@@ -90,95 +90,95 @@ namespace glm
 	// -- Unary bit operators --
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> operator+(tdualquat<T, Q> const& q);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> operator+(tdualquat<T, Q> const& q);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> operator-(tdualquat<T, Q> const& q);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> operator-(tdualquat<T, Q> const& q);
 
 	// -- Binary operators --
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> operator+(tdualquat<T, Q> const& q, tdualquat<T, Q> const& p);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> operator+(tdualquat<T, Q> const& q, tdualquat<T, Q> const& p);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> operator*(tdualquat<T, Q> const& q, tdualquat<T, Q> const& p);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> operator*(tdualquat<T, Q> const& q, tdualquat<T, Q> const& p);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL vec<3, T, Q> operator*(tdualquat<T, Q> const& q, vec<3, T, Q> const& v);
+	GLM_NODISCARD GLM_FUNC_DECL vec<3, T, Q> operator*(tdualquat<T, Q> const& q, vec<3, T, Q> const& v);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL vec<3, T, Q> operator*(vec<3, T, Q> const& v, tdualquat<T, Q> const& q);
+	GLM_NODISCARD GLM_FUNC_DECL vec<3, T, Q> operator*(vec<3, T, Q> const& v, tdualquat<T, Q> const& q);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL vec<4, T, Q> operator*(tdualquat<T, Q> const& q, vec<4, T, Q> const& v);
+	GLM_NODISCARD GLM_FUNC_DECL vec<4, T, Q> operator*(tdualquat<T, Q> const& q, vec<4, T, Q> const& v);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL vec<4, T, Q> operator*(vec<4, T, Q> const& v, tdualquat<T, Q> const& q);
+	GLM_NODISCARD GLM_FUNC_DECL vec<4, T, Q> operator*(vec<4, T, Q> const& v, tdualquat<T, Q> const& q);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> operator*(tdualquat<T, Q> const& q, T const& s);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> operator*(tdualquat<T, Q> const& q, T const& s);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> operator*(T const& s, tdualquat<T, Q> const& q);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> operator*(T const& s, tdualquat<T, Q> const& q);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> operator/(tdualquat<T, Q> const& q, T const& s);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> operator/(tdualquat<T, Q> const& q, T const& s);
 
 	// -- Boolean operators --
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL bool operator==(tdualquat<T, Q> const& q1, tdualquat<T, Q> const& q2);
+	GLM_NODISCARD GLM_FUNC_DECL bool operator==(tdualquat<T, Q> const& q1, tdualquat<T, Q> const& q2);
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL bool operator!=(tdualquat<T, Q> const& q1, tdualquat<T, Q> const& q2);
+	GLM_NODISCARD GLM_FUNC_DECL bool operator!=(tdualquat<T, Q> const& q1, tdualquat<T, Q> const& q2);
 
 	/// Creates an identity dual quaternion.
 	///
 	/// @see gtx_dual_quaternion
 	template <typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> dual_quat_identity();
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> dual_quat_identity();
 
 	/// Returns the normalized quaternion.
 	///
 	/// @see gtx_dual_quaternion
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> normalize(tdualquat<T, Q> const& q);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> normalize(tdualquat<T, Q> const& q);
 
 	/// Returns the linear interpolation of two dual quaternion.
 	///
 	/// @see gtc_dual_quaternion
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> lerp(tdualquat<T, Q> const& x, tdualquat<T, Q> const& y, T const& a);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> lerp(tdualquat<T, Q> const& x, tdualquat<T, Q> const& y, T const& a);
 
 	/// Returns the q inverse.
 	///
 	/// @see gtx_dual_quaternion
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> inverse(tdualquat<T, Q> const& q);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> inverse(tdualquat<T, Q> const& q);
 
 	/// Converts a quaternion to a 2 * 4 matrix.
 	///
 	/// @see gtx_dual_quaternion
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL mat<2, 4, T, Q> mat2x4_cast(tdualquat<T, Q> const& x);
+	GLM_NODISCARD GLM_FUNC_DECL mat<2, 4, T, Q> mat2x4_cast(tdualquat<T, Q> const& x);
 
 	/// Converts a quaternion to a 3 * 4 matrix.
 	///
 	/// @see gtx_dual_quaternion
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL mat<3, 4, T, Q> mat3x4_cast(tdualquat<T, Q> const& x);
+	GLM_NODISCARD GLM_FUNC_DECL mat<3, 4, T, Q> mat3x4_cast(tdualquat<T, Q> const& x);
 
 	/// Converts a 2 * 4 matrix (matrix which holds real and dual parts) to a quaternion.
 	///
 	/// @see gtx_dual_quaternion
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> dualquat_cast(mat<2, 4, T, Q> const& x);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> dualquat_cast(mat<2, 4, T, Q> const& x);
 
 	/// Converts a 3 * 4 matrix (augmented matrix rotation + translation) to a quaternion.
 	///
 	/// @see gtx_dual_quaternion
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL tdualquat<T, Q> dualquat_cast(mat<3, 4, T, Q> const& x);
+	GLM_NODISCARD GLM_FUNC_DECL tdualquat<T, Q> dualquat_cast(mat<3, 4, T, Q> const& x);
 
 
 	/// Dual-quaternion of low single-qualifier floating-point numbers.

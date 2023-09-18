@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename genType>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER genType perp(genType const& x, genType const& Normal)
+    GLM_FUNC_QUALIFIER genType perp(genType const& x, genType const& Normal)
 	{
 		return x - proj(x, Normal);
 	}

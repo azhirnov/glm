@@ -36,7 +36,7 @@ namespace glm
 	///
 	/// @see ext_vector_integer
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, bool, Q> isPowerOfTwo(vec<L, T, Q> const& v);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, bool, Q> isPowerOfTwo(vec<L, T, Q> const& v);
 
 	/// Return the power of two number which value is just higher the input value,
 	/// round up to a power of two.
@@ -47,7 +47,7 @@ namespace glm
 	///
 	/// @see ext_vector_integer
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, T, Q> nextPowerOfTwo(vec<L, T, Q> const& v);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, T, Q> nextPowerOfTwo(vec<L, T, Q> const& v);
 
 	/// Return the power of two number which value is just lower the input value,
 	/// round down to a power of two.
@@ -58,7 +58,7 @@ namespace glm
 	///
 	/// @see ext_vector_integer
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, T, Q> prevPowerOfTwo(vec<L, T, Q> const& v);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, T, Q> prevPowerOfTwo(vec<L, T, Q> const& v);
 
 	/// Return true if the 'Value' is a multiple of 'Multiple'.
 	///
@@ -68,7 +68,7 @@ namespace glm
 	///
 	/// @see ext_vector_integer
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, bool, Q> isMultiple(vec<L, T, Q> const& v, T Multiple);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, bool, Q> isMultiple(vec<L, T, Q> const& v, T Multiple);
 
 	/// Return true if the 'Value' is a multiple of 'Multiple'.
 	///
@@ -78,7 +78,7 @@ namespace glm
 	///
 	/// @see ext_vector_integer
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, bool, Q> isMultiple(vec<L, T, Q> const& v, vec<L, T, Q> const& Multiple);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, bool, Q> isMultiple(vec<L, T, Q> const& v, vec<L, T, Q> const& Multiple);
 
 	/// Higher multiple number of Source.
 	///
@@ -91,7 +91,7 @@ namespace glm
 	///
 	/// @see ext_vector_integer
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, T, Q> nextMultiple(vec<L, T, Q> const& v, T Multiple);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, T, Q> nextMultiple(vec<L, T, Q> const& v, T Multiple);
 
 	/// Higher multiple number of Source.
 	///
@@ -104,7 +104,7 @@ namespace glm
 	///
 	/// @see ext_vector_integer
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, T, Q> nextMultiple(vec<L, T, Q> const& v, vec<L, T, Q> const& Multiple);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, T, Q> nextMultiple(vec<L, T, Q> const& v, vec<L, T, Q> const& Multiple);
 
 	/// Lower multiple number of Source.
 	///
@@ -117,7 +117,7 @@ namespace glm
 	///
 	/// @see ext_vector_integer
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, T, Q> prevMultiple(vec<L, T, Q> const& v, T Multiple);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, T, Q> prevMultiple(vec<L, T, Q> const& v, T Multiple);
 
 	/// Lower multiple number of Source.
 	///
@@ -130,7 +130,7 @@ namespace glm
 	///
 	/// @see ext_vector_integer
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, T, Q> prevMultiple(vec<L, T, Q> const& v, vec<L, T, Q> const& Multiple);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, T, Q> prevMultiple(vec<L, T, Q> const& v, vec<L, T, Q> const& Multiple);
 
 	/// Returns the bit number of the Nth significant bit set to
 	/// 1 in the binary representation of value.
@@ -141,7 +141,7 @@ namespace glm
 	///
 	/// @see ext_vector_integer
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, int, Q> findNSB(vec<L, T, Q> const& Source, vec<L, int, Q> SignificantBitCount);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, int, Q> findNSB(vec<L, T, Q> const& Source, vec<L, int, Q> SignificantBitCount);
 
 	/// @}
 } //namespace glm

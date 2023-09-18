@@ -72,7 +72,7 @@ namespace detail
 	// -- Component accesses --
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR T & qua<T, Q>::operator[](typename qua<T, Q>::length_type i)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR T & qua<T, Q>::operator[](typename qua<T, Q>::length_type i)
 	{
 		assert(i >= 0 && i < this->length());
 #		ifdef GLM_FORCE_QUAT_DATA_XYZW
@@ -83,7 +83,7 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR T const& qua<T, Q>::operator[](typename qua<T, Q>::length_type i) const
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR T const& qua<T, Q>::operator[](typename qua<T, Q>::length_type i) const
 	{
 		assert(i >= 0 && i < this->length());
 #		ifdef GLM_FORCE_QUAT_DATA_XYZW
@@ -239,13 +239,13 @@ namespace detail
 
 #	if GLM_HAS_EXPLICIT_CONVERSION_OPERATORS
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q>::operator mat<3, 3, T, Q>() const
+    GLM_FUNC_QUALIFIER qua<T, Q>::operator mat<3, 3, T, Q>() const
 	{
 		return mat3_cast(*this);
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q>::operator mat<4, 4, T, Q>() const
+    GLM_FUNC_QUALIFIER qua<T, Q>::operator mat<4, 4, T, Q>() const
 	{
 		return mat4_cast(*this);
 	}
@@ -321,13 +321,13 @@ namespace detail
 	// -- Unary bit operators --
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator+(qua<T, Q> const& q)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator+(qua<T, Q> const& q)
 	{
 		return q;
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator-(qua<T, Q> const& q)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator-(qua<T, Q> const& q)
 	{
 		return qua<T, Q>::wxyz(-q.w, -q.x, -q.y, -q.z);
 	}
@@ -335,25 +335,25 @@ namespace detail
 	// -- Binary operators --
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator+(qua<T, Q> const& q, qua<T, Q> const& p)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator+(qua<T, Q> const& q, qua<T, Q> const& p)
 	{
 		return qua<T, Q>(q) += p;
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator-(qua<T, Q> const& q, qua<T, Q> const& p)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator-(qua<T, Q> const& q, qua<T, Q> const& p)
 	{
 		return qua<T, Q>(q) -= p;
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator*(qua<T, Q> const& q, qua<T, Q> const& p)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator*(qua<T, Q> const& q, qua<T, Q> const& p)
 	{
 		return qua<T, Q>(q) *= p;
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<3, T, Q> operator*(qua<T, Q> const& q, vec<3, T, Q> const& v)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<3, T, Q> operator*(qua<T, Q> const& q, vec<3, T, Q> const& v)
 	{
 		vec<3, T, Q> const QuatVector(q.x, q.y, q.z);
 		vec<3, T, Q> const uv(glm::cross(QuatVector, v));
@@ -363,38 +363,38 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<3, T, Q> operator*(vec<3, T, Q> const& v, qua<T, Q> const& q)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<3, T, Q> operator*(vec<3, T, Q> const& v, qua<T, Q> const& q)
 	{
 		return glm::inverse(q) * v;
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q> operator*(qua<T, Q> const& q, vec<4, T, Q> const& v)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q> operator*(qua<T, Q> const& q, vec<4, T, Q> const& v)
 	{
 		return detail::compute_quat_mul_vec4<T, Q, detail::is_aligned<Q>::value>::call(q, v);
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q> operator*(vec<4, T, Q> const& v, qua<T, Q> const& q)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q> operator*(vec<4, T, Q> const& v, qua<T, Q> const& q)
 	{
 		return glm::inverse(q) * v;
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator*(qua<T, Q> const& q, T const& s)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator*(qua<T, Q> const& q, T const& s)
 	{
 		return qua<T, Q>::wxyz(
 			q.w * s, q.x * s, q.y * s, q.z * s);
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator*(T const& s, qua<T, Q> const& q)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator*(T const& s, qua<T, Q> const& q)
 	{
 		return q * s;
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator/(qua<T, Q> const& q, T const& s)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR qua<T, Q> operator/(qua<T, Q> const& q, T const& s)
 	{
 		return qua<T, Q>::wxyz(
 			q.w / s, q.x / s, q.y / s, q.z / s);
@@ -403,13 +403,13 @@ namespace detail
 	// -- Boolean operators --
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator==(qua<T, Q> const& q1, qua<T, Q> const& q2)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator==(qua<T, Q> const& q1, qua<T, Q> const& q2)
 	{
 		return q1.x == q2.x && q1.y == q2.y && q1.z == q2.z && q1.w == q2.w;
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator!=(qua<T, Q> const& q1, qua<T, Q> const& q2)
+    GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator!=(qua<T, Q> const& q1, qua<T, Q> const& q2)
 	{
 		return q1.x != q2.x || q1.y != q2.y || q1.z != q2.z || q1.w != q2.w;
 	}

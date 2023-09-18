@@ -7,13 +7,13 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<3, T, Q> eulerAngles(qua<T, Q> const& x)
+    GLM_FUNC_QUALIFIER vec<3, T, Q> eulerAngles(qua<T, Q> const& x)
 	{
 		return vec<3, T, Q>(pitch(x), yaw(x), roll(x));
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER T roll(qua<T, Q> const& q)
+    GLM_FUNC_QUALIFIER T roll(qua<T, Q> const& q)
 	{
 		T const y = static_cast<T>(2) * (q.x * q.y + q.w * q.z);
 		T const x = q.w * q.w + q.x * q.x - q.y * q.y - q.z * q.z;
@@ -25,7 +25,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER T pitch(qua<T, Q> const& q)
+    GLM_FUNC_QUALIFIER T pitch(qua<T, Q> const& q)
 	{
 		//return T(atan(T(2) * (q.y * q.z + q.w * q.x), q.w * q.w - q.x * q.x - q.y * q.y + q.z * q.z));
 		T const y = static_cast<T>(2) * (q.y * q.z + q.w * q.x);
@@ -38,13 +38,13 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER T yaw(qua<T, Q> const& q)
+    GLM_FUNC_QUALIFIER T yaw(qua<T, Q> const& q)
 	{
 		return asin(clamp(static_cast<T>(-2) * (q.x * q.z - q.w * q.y), static_cast<T>(-1), static_cast<T>(1)));
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<3, 3, T, Q> mat3_cast(qua<T, Q> const& q)
+    GLM_FUNC_QUALIFIER mat<3, 3, T, Q> mat3_cast(qua<T, Q> const& q)
 	{
 		mat<3, 3, T, Q> Result(T(1));
 		T qxx(q.x * q.x);
@@ -72,13 +72,13 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, Q> mat4_cast(qua<T, Q> const& q)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, Q> mat4_cast(qua<T, Q> const& q)
 	{
 		return mat<4, 4, T, Q>(mat3_cast(q));
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q> quat_cast(mat<3, 3, T, Q> const& m)
+    GLM_FUNC_QUALIFIER qua<T, Q> quat_cast(mat<3, 3, T, Q> const& m)
 	{
 		T fourXSquaredMinus1 = m[0][0] - m[1][1] - m[2][2];
 		T fourYSquaredMinus1 = m[1][1] - m[0][0] - m[2][2];
@@ -123,13 +123,13 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q> quat_cast(mat<4, 4, T, Q> const& m4)
+    GLM_FUNC_QUALIFIER qua<T, Q> quat_cast(mat<4, 4, T, Q> const& m4)
 	{
 		return quat_cast(mat<3, 3, T, Q>(m4));
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, bool, Q> lessThan(qua<T, Q> const& x, qua<T, Q> const& y)
+    GLM_FUNC_QUALIFIER vec<4, bool, Q> lessThan(qua<T, Q> const& x, qua<T, Q> const& y)
 	{
 		vec<4, bool, Q> Result;
 		for(length_t i = 0; i < x.length(); ++i)
@@ -138,7 +138,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, bool, Q> lessThanEqual(qua<T, Q> const& x, qua<T, Q> const& y)
+    GLM_FUNC_QUALIFIER vec<4, bool, Q> lessThanEqual(qua<T, Q> const& x, qua<T, Q> const& y)
 	{
 		vec<4, bool, Q> Result;
 		for(length_t i = 0; i < x.length(); ++i)
@@ -147,7 +147,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, bool, Q> greaterThan(qua<T, Q> const& x, qua<T, Q> const& y)
+    GLM_FUNC_QUALIFIER vec<4, bool, Q> greaterThan(qua<T, Q> const& x, qua<T, Q> const& y)
 	{
 		vec<4, bool, Q> Result;
 		for(length_t i = 0; i < x.length(); ++i)
@@ -156,7 +156,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER vec<4, bool, Q> greaterThanEqual(qua<T, Q> const& x, qua<T, Q> const& y)
+    GLM_FUNC_QUALIFIER vec<4, bool, Q> greaterThanEqual(qua<T, Q> const& x, qua<T, Q> const& y)
 	{
 		vec<4, bool, Q> Result;
 		for(length_t i = 0; i < x.length(); ++i)
@@ -166,7 +166,7 @@ namespace glm
 
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q> quatLookAt(vec<3, T, Q> const& direction, vec<3, T, Q> const& up)
+    GLM_FUNC_QUALIFIER qua<T, Q> quatLookAt(vec<3, T, Q> const& direction, vec<3, T, Q> const& up)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT
 			return quatLookAtLH(direction, up);
@@ -176,7 +176,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q> quatLookAtRH(vec<3, T, Q> const& direction, vec<3, T, Q> const& up)
+    GLM_FUNC_QUALIFIER qua<T, Q> quatLookAtRH(vec<3, T, Q> const& direction, vec<3, T, Q> const& up)
 	{
 		mat<3, 3, T, Q> Result;
 
@@ -189,7 +189,7 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER qua<T, Q> quatLookAtLH(vec<3, T, Q> const& direction, vec<3, T, Q> const& up)
+    GLM_FUNC_QUALIFIER qua<T, Q> quatLookAtLH(vec<3, T, Q> const& direction, vec<3, T, Q> const& up)
 	{
 		mat<3, 3, T, Q> Result;
 

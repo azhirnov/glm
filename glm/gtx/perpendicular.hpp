@@ -33,7 +33,7 @@ namespace glm
 	//! Projects x a perpendicular axis of Normal.
 	//! From GLM_GTX_perpendicular extension.
 	template<typename genType>
-	GLM_FUNC_DECL genType perp(genType const& x, genType const& Normal);
+	GLM_NODISCARD GLM_FUNC_DECL genType perp(genType const& x, genType const& Normal);
 
 	/// @}
 }//namespace glm

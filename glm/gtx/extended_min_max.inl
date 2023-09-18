@@ -3,7 +3,7 @@
 namespace glm
 {
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER T min(
+    GLM_FUNC_QUALIFIER T min(
 		T const& x,
 		T const& y,
 		T const& z)
@@ -12,7 +12,7 @@ namespace glm
 	}
 
 	template<typename T, template<typename> class C>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER C<T> min
+    GLM_FUNC_QUALIFIER C<T> min
 	(
 		C<T> const& x,
 		typename C<T>::T const& y,
@@ -23,7 +23,7 @@ namespace glm
 	}
 
 	template<typename T, template<typename> class C>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER C<T> min
+    GLM_FUNC_QUALIFIER C<T> min
 	(
 		C<T> const& x,
 		C<T> const& y,
@@ -34,7 +34,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER T min
+    GLM_FUNC_QUALIFIER T min
 	(
 		T const& x,
 		T const& y,
@@ -46,7 +46,7 @@ namespace glm
 	}
 
 	template<typename T, template<typename> class C>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER C<T> min
+    GLM_FUNC_QUALIFIER C<T> min
 	(
 		C<T> const& x,
 		typename C<T>::T const& y,
@@ -58,7 +58,7 @@ namespace glm
 	}
 
 	template<typename T, template<typename> class C>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER C<T> min
+    GLM_FUNC_QUALIFIER C<T> min
 	(
 		C<T> const& x,
 		C<T> const& y,
@@ -70,7 +70,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER T max(
+    GLM_FUNC_QUALIFIER T max(
 		T const& x,
 		T const& y,
 		T const& z)
@@ -79,7 +79,7 @@ namespace glm
 	}
 
 	template<typename T, template<typename> class C>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER C<T> max
+    GLM_FUNC_QUALIFIER C<T> max
 	(
 		C<T> const& x,
 		typename C<T>::T const& y,
@@ -90,7 +90,7 @@ namespace glm
 	}
 
 	template<typename T, template<typename> class C>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER C<T> max
+    GLM_FUNC_QUALIFIER C<T> max
 	(
 		C<T> const& x,
 		C<T> const& y,
@@ -101,7 +101,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER T max
+    GLM_FUNC_QUALIFIER T max
 	(
 		T const& x,
 		T const& y,
@@ -113,7 +113,7 @@ namespace glm
 	}
 
 	template<typename T, template<typename> class C>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER C<T> max
+    GLM_FUNC_QUALIFIER C<T> max
 	(
 		C<T> const& x,
 		typename C<T>::T const& y,
@@ -125,7 +125,7 @@ namespace glm
 	}
 
 	template<typename T, template<typename> class C>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER C<T> max
+    GLM_FUNC_QUALIFIER C<T> max
 	(
 		C<T> const& x,
 		C<T> const& y,

@@ -406,31 +406,31 @@ namespace detail
 }//namespace detail
 
 	template<length_t C, length_t R, typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<C, R, T, Q> matrixCompMult(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y)
+    GLM_FUNC_QUALIFIER mat<C, R, T, Q> matrixCompMult(mat<C, R, T, Q> const& x, mat<C, R, T, Q> const& y)
 	{
 		return detail::compute_matrixCompMult_type<C, R, T, Q, std::numeric_limits<T>::is_iec559, detail::is_aligned<Q>::value>::call(x, y);
 	}
 
 	template<length_t DA, length_t DB, typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER typename detail::outerProduct_trait<DA, DB, T, Q>::type outerProduct(vec<DA, T, Q> const& c, vec<DB, T, Q> const& r)
+    GLM_FUNC_QUALIFIER typename detail::outerProduct_trait<DA, DB, T, Q>::type outerProduct(vec<DA, T, Q> const& c, vec<DB, T, Q> const& r)
 	{
 		return detail::compute_outerProduct_type<DA, DB, T, Q, std::numeric_limits<T>::is_iec559>::call(c, r);
 	}
 
 	template<length_t C, length_t R, typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER typename mat<C, R, T, Q>::transpose_type transpose(mat<C, R, T, Q> const& m)
+    GLM_FUNC_QUALIFIER typename mat<C, R, T, Q>::transpose_type transpose(mat<C, R, T, Q> const& m)
 	{
 		return detail::compute_transpose_type<C, R, T, Q, std::numeric_limits<T>::is_iec559, detail::is_aligned<Q>::value>::call(m);
 	}
 
 	template<length_t C, length_t R, typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER T determinant(mat<C, R, T, Q> const& m)
+    GLM_FUNC_QUALIFIER T determinant(mat<C, R, T, Q> const& m)
 	{
 		return detail::compute_determinant_type<C, R, T, Q, std::numeric_limits<T>::is_iec559, detail::is_aligned<Q>::value>::call(m);
 	}
 
 	template<length_t C, length_t R, typename T, qualifier Q>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<C, R, T, Q> inverse(mat<C, R, T, Q> const& m)
+    GLM_FUNC_QUALIFIER mat<C, R, T, Q> inverse(mat<C, R, T, Q> const& m)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559 || GLM_CONFIG_UNRESTRICTED_GENTYPE, "'inverse' only accept floating-point inputs");
 		return detail::compute_inverse<C, R, T, Q, detail::is_aligned<Q>::value>::call(m);

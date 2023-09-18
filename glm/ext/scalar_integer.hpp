@@ -32,27 +32,27 @@ namespace glm
 	///
 	/// @see ext_scalar_integer
 	template<typename genIUType>
-	GLM_FUNC_DECL bool isPowerOfTwo(genIUType v);
+	GLM_NODISCARD GLM_FUNC_DECL bool isPowerOfTwo(genIUType v);
 
 	/// Return the power of two number which value is just higher the input value,
 	/// round up to a power of two.
 	///
 	/// @see ext_scalar_integer
 	template<typename genIUType>
-	GLM_FUNC_DECL genIUType nextPowerOfTwo(genIUType v);
+	GLM_NODISCARD GLM_FUNC_DECL genIUType nextPowerOfTwo(genIUType v);
 
 	/// Return the power of two number which value is just lower the input value,
 	/// round down to a power of two.
 	///
 	/// @see ext_scalar_integer
 	template<typename genIUType>
-	GLM_FUNC_DECL genIUType prevPowerOfTwo(genIUType v);
+	GLM_NODISCARD GLM_FUNC_DECL genIUType prevPowerOfTwo(genIUType v);
 
 	/// Return true if the 'Value' is a multiple of 'Multiple'.
 	///
 	/// @see ext_scalar_integer
 	template<typename genIUType>
-	GLM_FUNC_DECL bool isMultiple(genIUType v, genIUType Multiple);
+	GLM_NODISCARD GLM_FUNC_DECL bool isMultiple(genIUType v, genIUType Multiple);
 
 	/// Higher multiple number of Source.
 	///
@@ -63,7 +63,7 @@ namespace glm
 	///
 	/// @see ext_scalar_integer
 	template<typename genIUType>
-	GLM_FUNC_DECL genIUType nextMultiple(genIUType v, genIUType Multiple);
+	GLM_NODISCARD GLM_FUNC_DECL genIUType nextMultiple(genIUType v, genIUType Multiple);
 
 	/// Lower multiple number of Source.
 	///
@@ -74,7 +74,7 @@ namespace glm
 	///
 	/// @see ext_scalar_integer
 	template<typename genIUType>
-	GLM_FUNC_DECL genIUType prevMultiple(genIUType v, genIUType Multiple);
+	GLM_NODISCARD GLM_FUNC_DECL genIUType prevMultiple(genIUType v, genIUType Multiple);
 
 	/// Returns the bit number of the Nth significant bit set to
 	/// 1 in the binary representation of value.
@@ -84,7 +84,7 @@ namespace glm
 	///
 	/// @see ext_scalar_integer
 	template<typename genIUType>
-	GLM_FUNC_DECL int findNSB(genIUType x, int significantBitCount);
+	GLM_NODISCARD GLM_FUNC_DECL int findNSB(genIUType x, int significantBitCount);
 
 	/// @}
 } //namespace glm

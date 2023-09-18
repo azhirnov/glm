@@ -30,17 +30,17 @@ namespace glm
 
 	/// @see gtx_bit
 	template<typename genIUType>
-	GLM_FUNC_DECL genIUType highestBitValue(genIUType Value);
+	GLM_NODISCARD GLM_FUNC_DECL genIUType highestBitValue(genIUType Value);
 
 	/// @see gtx_bit
 	template<typename genIUType>
-	GLM_FUNC_DECL genIUType lowestBitValue(genIUType Value);
+	GLM_NODISCARD GLM_FUNC_DECL genIUType lowestBitValue(genIUType Value);
 
 	/// Find the highest bit set to 1 in a integer variable and return its value.
 	///
 	/// @see gtx_bit
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_DECL vec<L, T, Q> highestBitValue(vec<L, T, Q> const& value);
+	GLM_NODISCARD GLM_FUNC_DECL vec<L, T, Q> highestBitValue(vec<L, T, Q> const& value);
 
 	/// Return the power of two number which value is just higher the input value.
 	/// Deprecated, use ceilPowerOfTwo from GTC_round instead

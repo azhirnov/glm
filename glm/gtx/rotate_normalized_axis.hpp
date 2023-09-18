@@ -44,7 +44,7 @@ namespace glm
 	/// @see - rotate(mat<4, 4, T, Q> const& m, T angle, T x, T y, T z)
 	/// @see - rotate(T angle, vec<3, T, Q> const& v)
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL mat<4, 4, T, Q> rotateNormalizedAxis(
+	GLM_NODISCARD GLM_FUNC_DECL mat<4, 4, T, Q> rotateNormalizedAxis(
 		mat<4, 4, T, Q> const& m,
 		T const& angle,
 		vec<3, T, Q> const& axis);
@@ -57,7 +57,7 @@ namespace glm
 	///
 	/// @see gtx_rotate_normalized_axis
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL qua<T, Q> rotateNormalizedAxis(
+	GLM_NODISCARD GLM_FUNC_DECL qua<T, Q> rotateNormalizedAxis(
 		qua<T, Q> const& q,
 		T const& angle,
 		vec<3, T, Q> const& axis);

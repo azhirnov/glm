@@ -32,7 +32,7 @@ namespace glm
 	/// Return the minimum component-wise values of 3 inputs
 	/// @see gtx_extented_min_max
 	template<typename T>
-	GLM_FUNC_DECL T min(
+	GLM_NODISCARD GLM_FUNC_DECL T min(
 		T const& x,
 		T const& y,
 		T const& z);
@@ -40,7 +40,7 @@ namespace glm
 	/// Return the minimum component-wise values of 3 inputs
 	/// @see gtx_extented_min_max
 	template<typename T, template<typename> class C>
-	GLM_FUNC_DECL C<T> min(
+	GLM_NODISCARD GLM_FUNC_DECL C<T> min(
 		C<T> const& x,
 		typename C<T>::T const& y,
 		typename C<T>::T const& z);
@@ -48,7 +48,7 @@ namespace glm
 	/// Return the minimum component-wise values of 3 inputs
 	/// @see gtx_extented_min_max
 	template<typename T, template<typename> class C>
-	GLM_FUNC_DECL C<T> min(
+	GLM_NODISCARD GLM_FUNC_DECL C<T> min(
 		C<T> const& x,
 		C<T> const& y,
 		C<T> const& z);
@@ -56,7 +56,7 @@ namespace glm
 	/// Return the minimum component-wise values of 4 inputs
 	/// @see gtx_extented_min_max
 	template<typename T>
-	GLM_FUNC_DECL T min(
+	GLM_NODISCARD GLM_FUNC_DECL T min(
 		T const& x,
 		T const& y,
 		T const& z,
@@ -65,7 +65,7 @@ namespace glm
 	/// Return the minimum component-wise values of 4 inputs
 	/// @see gtx_extented_min_max
 	template<typename T, template<typename> class C>
-	GLM_FUNC_DECL C<T> min(
+	GLM_NODISCARD GLM_FUNC_DECL C<T> min(
 		C<T> const& x,
 		typename C<T>::T const& y,
 		typename C<T>::T const& z,
@@ -74,7 +74,7 @@ namespace glm
 	/// Return the minimum component-wise values of 4 inputs
 	/// @see gtx_extented_min_max
 	template<typename T, template<typename> class C>
-	GLM_FUNC_DECL C<T> min(
+	GLM_NODISCARD GLM_FUNC_DECL C<T> min(
 		C<T> const& x,
 		C<T> const& y,
 		C<T> const& z,
@@ -83,7 +83,7 @@ namespace glm
 	/// Return the maximum component-wise values of 3 inputs
 	/// @see gtx_extented_min_max
 	template<typename T>
-	GLM_FUNC_DECL T max(
+	GLM_NODISCARD GLM_FUNC_DECL T max(
 		T const& x,
 		T const& y,
 		T const& z);
@@ -91,7 +91,7 @@ namespace glm
 	/// Return the maximum component-wise values of 3 inputs
 	/// @see gtx_extented_min_max
 	template<typename T, template<typename> class C>
-	GLM_FUNC_DECL C<T> max(
+	GLM_NODISCARD GLM_FUNC_DECL C<T> max(
 		C<T> const& x,
 		typename C<T>::T const& y,
 		typename C<T>::T const& z);
@@ -99,7 +99,7 @@ namespace glm
 	/// Return the maximum component-wise values of 3 inputs
 	/// @see gtx_extented_min_max
 	template<typename T, template<typename> class C>
-	GLM_FUNC_DECL C<T> max(
+	GLM_NODISCARD GLM_FUNC_DECL C<T> max(
 		C<T> const& x,
 		C<T> const& y,
 		C<T> const& z);
@@ -107,7 +107,7 @@ namespace glm
 	/// Return the maximum component-wise values of 4 inputs
 	/// @see gtx_extented_min_max
 	template<typename T>
-	GLM_FUNC_DECL T max(
+	GLM_NODISCARD GLM_FUNC_DECL T max(
 		T const& x,
 		T const& y,
 		T const& z,
@@ -116,7 +116,7 @@ namespace glm
 	/// Return the maximum component-wise values of 4 inputs
 	/// @see gtx_extented_min_max
 	template<typename T, template<typename> class C>
-	GLM_FUNC_DECL C<T> max(
+	GLM_NODISCARD GLM_FUNC_DECL C<T> max(
 		C<T> const& x,
 		typename C<T>::T const& y,
 		typename C<T>::T const& z,
@@ -125,7 +125,7 @@ namespace glm
 	/// Return the maximum component-wise values of 4 inputs
 	/// @see gtx_extented_min_max
 	template<typename T, template<typename> class C>
-	GLM_FUNC_DECL C<T> max(
+	GLM_NODISCARD GLM_FUNC_DECL C<T> max(
 		C<T> const& x,
 		C<T> const& y,
 		C<T> const& z,

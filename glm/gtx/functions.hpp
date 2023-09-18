@@ -35,7 +35,7 @@ namespace glm
 	///
 	/// @see gtc_epsilon
 	template<typename T>
-	GLM_FUNC_DECL T gauss(
+	GLM_NODISCARD GLM_FUNC_DECL T gauss(
 		T x,
 		T ExpectedValue,
 		T StandardDeviation);
@@ -44,7 +44,7 @@ namespace glm
 	///
 	/// @see gtc_epsilon
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL T gauss(
+	GLM_NODISCARD GLM_FUNC_DECL T gauss(
 		vec<2, T, Q> const& Coord,
 		vec<2, T, Q> const& ExpectedValue,
 		vec<2, T, Q> const& StandardDeviation);

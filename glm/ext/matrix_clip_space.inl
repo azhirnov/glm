@@ -1,7 +1,7 @@
 namespace glm
 {
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> ortho(T left, T right, T bottom, T top)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> ortho(T left, T right, T bottom, T top)
 	{
 		mat<4, 4, T, defaultp> Result(static_cast<T>(1));
 		Result[0][0] = static_cast<T>(2) / (right - left);
@@ -13,7 +13,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoLH_ZO(T left, T right, T bottom, T top, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoLH_ZO(T left, T right, T bottom, T top, T zNear, T zFar)
 	{
 		mat<4, 4, T, defaultp> Result(1);
 		Result[0][0] = static_cast<T>(2) / (right - left);
@@ -26,7 +26,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoLH_NO(T left, T right, T bottom, T top, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoLH_NO(T left, T right, T bottom, T top, T zNear, T zFar)
 	{
 		mat<4, 4, T, defaultp> Result(1);
 		Result[0][0] = static_cast<T>(2) / (right - left);
@@ -39,7 +39,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoRH_ZO(T left, T right, T bottom, T top, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoRH_ZO(T left, T right, T bottom, T top, T zNear, T zFar)
 	{
 		mat<4, 4, T, defaultp> Result(1);
 		Result[0][0] = static_cast<T>(2) / (right - left);
@@ -52,7 +52,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoRH_NO(T left, T right, T bottom, T top, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoRH_NO(T left, T right, T bottom, T top, T zNear, T zFar)
 	{
 		mat<4, 4, T, defaultp> Result(1);
 		Result[0][0] = static_cast<T>(2) / (right - left);
@@ -65,7 +65,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoZO(T left, T right, T bottom, T top, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoZO(T left, T right, T bottom, T top, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT
 			return orthoLH_ZO(left, right, bottom, top, zNear, zFar);
@@ -75,7 +75,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoNO(T left, T right, T bottom, T top, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoNO(T left, T right, T bottom, T top, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT
 			return orthoLH_NO(left, right, bottom, top, zNear, zFar);
@@ -85,7 +85,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoLH(T left, T right, T bottom, T top, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoLH(T left, T right, T bottom, T top, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_ZO_BIT
 			return orthoLH_ZO(left, right, bottom, top, zNear, zFar);
@@ -96,7 +96,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoRH(T left, T right, T bottom, T top, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> orthoRH(T left, T right, T bottom, T top, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_ZO_BIT
 			return orthoRH_ZO(left, right, bottom, top, zNear, zFar);
@@ -106,7 +106,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> ortho(T left, T right, T bottom, T top, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> ortho(T left, T right, T bottom, T top, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL == GLM_CLIP_CONTROL_LH_ZO
 			return orthoLH_ZO(left, right, bottom, top, zNear, zFar);
@@ -120,7 +120,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumLH_ZO(T left, T right, T bottom, T top, T nearVal, T farVal)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumLH_ZO(T left, T right, T bottom, T top, T nearVal, T farVal)
 	{
 		mat<4, 4, T, defaultp> Result(0);
 		Result[0][0] = (static_cast<T>(2) * nearVal) / (right - left);
@@ -134,7 +134,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumLH_NO(T left, T right, T bottom, T top, T nearVal, T farVal)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumLH_NO(T left, T right, T bottom, T top, T nearVal, T farVal)
 	{
 		mat<4, 4, T, defaultp> Result(0);
 		Result[0][0] = (static_cast<T>(2) * nearVal) / (right - left);
@@ -148,7 +148,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumRH_ZO(T left, T right, T bottom, T top, T nearVal, T farVal)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumRH_ZO(T left, T right, T bottom, T top, T nearVal, T farVal)
 	{
 		mat<4, 4, T, defaultp> Result(0);
 		Result[0][0] = (static_cast<T>(2) * nearVal) / (right - left);
@@ -162,7 +162,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumRH_NO(T left, T right, T bottom, T top, T nearVal, T farVal)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumRH_NO(T left, T right, T bottom, T top, T nearVal, T farVal)
 	{
 		mat<4, 4, T, defaultp> Result(0);
 		Result[0][0] = (static_cast<T>(2) * nearVal) / (right - left);
@@ -176,7 +176,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumZO(T left, T right, T bottom, T top, T nearVal, T farVal)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumZO(T left, T right, T bottom, T top, T nearVal, T farVal)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT
 			return frustumLH_ZO(left, right, bottom, top, nearVal, farVal);
@@ -186,7 +186,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumNO(T left, T right, T bottom, T top, T nearVal, T farVal)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumNO(T left, T right, T bottom, T top, T nearVal, T farVal)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT
 			return frustumLH_NO(left, right, bottom, top, nearVal, farVal);
@@ -196,7 +196,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumLH(T left, T right, T bottom, T top, T nearVal, T farVal)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumLH(T left, T right, T bottom, T top, T nearVal, T farVal)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_ZO_BIT
 			return frustumLH_ZO(left, right, bottom, top, nearVal, farVal);
@@ -206,7 +206,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumRH(T left, T right, T bottom, T top, T nearVal, T farVal)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustumRH(T left, T right, T bottom, T top, T nearVal, T farVal)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_ZO_BIT
 			return frustumRH_ZO(left, right, bottom, top, nearVal, farVal);
@@ -216,7 +216,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustum(T left, T right, T bottom, T top, T nearVal, T farVal)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> frustum(T left, T right, T bottom, T top, T nearVal, T farVal)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL == GLM_CLIP_CONTROL_LH_ZO
 			return frustumLH_ZO(left, right, bottom, top, nearVal, farVal);
@@ -230,7 +230,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveRH_ZO(T fovy, T aspect, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveRH_ZO(T fovy, T aspect, T zNear, T zFar)
 	{
 		assert(abs(aspect - std::numeric_limits<T>::epsilon()) > static_cast<T>(0));
 
@@ -246,7 +246,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveRH_NO(T fovy, T aspect, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveRH_NO(T fovy, T aspect, T zNear, T zFar)
 	{
 		assert(abs(aspect - std::numeric_limits<T>::epsilon()) > static_cast<T>(0));
 
@@ -262,7 +262,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveLH_ZO(T fovy, T aspect, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveLH_ZO(T fovy, T aspect, T zNear, T zFar)
 	{
 		assert(abs(aspect - std::numeric_limits<T>::epsilon()) > static_cast<T>(0));
 
@@ -278,7 +278,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveLH_NO(T fovy, T aspect, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveLH_NO(T fovy, T aspect, T zNear, T zFar)
 	{
 		assert(abs(aspect - std::numeric_limits<T>::epsilon()) > static_cast<T>(0));
 
@@ -294,7 +294,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveZO(T fovy, T aspect, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveZO(T fovy, T aspect, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT
 			return perspectiveLH_ZO(fovy, aspect, zNear, zFar);
@@ -304,7 +304,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveNO(T fovy, T aspect, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveNO(T fovy, T aspect, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT
 			return perspectiveLH_NO(fovy, aspect, zNear, zFar);
@@ -314,7 +314,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveLH(T fovy, T aspect, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveLH(T fovy, T aspect, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_ZO_BIT
 			return perspectiveLH_ZO(fovy, aspect, zNear, zFar);
@@ -325,7 +325,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveRH(T fovy, T aspect, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveRH(T fovy, T aspect, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_ZO_BIT
 			return perspectiveRH_ZO(fovy, aspect, zNear, zFar);
@@ -335,7 +335,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspective(T fovy, T aspect, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspective(T fovy, T aspect, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL == GLM_CLIP_CONTROL_LH_ZO
 			return perspectiveLH_ZO(fovy, aspect, zNear, zFar);
@@ -349,7 +349,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovRH_ZO(T fov, T width, T height, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovRH_ZO(T fov, T width, T height, T zNear, T zFar)
 	{
 		assert(width > static_cast<T>(0));
 		assert(height > static_cast<T>(0));
@@ -369,7 +369,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovRH_NO(T fov, T width, T height, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovRH_NO(T fov, T width, T height, T zNear, T zFar)
 	{
 		assert(width > static_cast<T>(0));
 		assert(height > static_cast<T>(0));
@@ -389,7 +389,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovLH_ZO(T fov, T width, T height, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovLH_ZO(T fov, T width, T height, T zNear, T zFar)
 	{
 		assert(width > static_cast<T>(0));
 		assert(height > static_cast<T>(0));
@@ -409,7 +409,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovLH_NO(T fov, T width, T height, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovLH_NO(T fov, T width, T height, T zNear, T zFar)
 	{
 		assert(width > static_cast<T>(0));
 		assert(height > static_cast<T>(0));
@@ -429,7 +429,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovZO(T fov, T width, T height, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovZO(T fov, T width, T height, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT
 			return perspectiveFovLH_ZO(fov, width, height, zNear, zFar);
@@ -439,7 +439,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovNO(T fov, T width, T height, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovNO(T fov, T width, T height, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT
 			return perspectiveFovLH_NO(fov, width, height, zNear, zFar);
@@ -449,7 +449,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovLH(T fov, T width, T height, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovLH(T fov, T width, T height, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_ZO_BIT
 			return perspectiveFovLH_ZO(fov, width, height, zNear, zFar);
@@ -459,7 +459,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovRH(T fov, T width, T height, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFovRH(T fov, T width, T height, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_ZO_BIT
 			return perspectiveFovRH_ZO(fov, width, height, zNear, zFar);
@@ -469,7 +469,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFov(T fov, T width, T height, T zNear, T zFar)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> perspectiveFov(T fov, T width, T height, T zNear, T zFar)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL == GLM_CLIP_CONTROL_LH_ZO
 			return perspectiveFovLH_ZO(fov, width, height, zNear, zFar);
@@ -483,7 +483,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> infinitePerspectiveRH(T fovy, T aspect, T zNear)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> infinitePerspectiveRH(T fovy, T aspect, T zNear)
 	{
 		T const range = tan(fovy / static_cast<T>(2)) * zNear;
 		T const left = -range * aspect;
@@ -501,7 +501,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> infinitePerspectiveLH(T fovy, T aspect, T zNear)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> infinitePerspectiveLH(T fovy, T aspect, T zNear)
 	{
 		T const range = tan(fovy / static_cast<T>(2)) * zNear;
 		T const left = -range * aspect;
@@ -519,7 +519,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> infinitePerspective(T fovy, T aspect, T zNear)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> infinitePerspective(T fovy, T aspect, T zNear)
 	{
 #		if GLM_CONFIG_CLIP_CONTROL & GLM_CLIP_CONTROL_LH_BIT
 			return infinitePerspectiveLH(fovy, aspect, zNear);
@@ -530,7 +530,7 @@ namespace glm
 
 	// Infinite projection matrix: http://www.terathon.com/gdc07_lengyel.pdf
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> tweakedInfinitePerspective(T fovy, T aspect, T zNear, T ep)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> tweakedInfinitePerspective(T fovy, T aspect, T zNear, T ep)
 	{
 		T const range = tan(fovy / static_cast<T>(2)) * zNear;
 		T const left = -range * aspect;
@@ -548,7 +548,7 @@ namespace glm
 	}
 
 	template<typename T>
-	GLM_NODISCARD GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> tweakedInfinitePerspective(T fovy, T aspect, T zNear)
+    GLM_FUNC_QUALIFIER mat<4, 4, T, defaultp> tweakedInfinitePerspective(T fovy, T aspect, T zNear)
 	{
 		return tweakedInfinitePerspective(fovy, aspect, zNear, epsilon<T>());
 	}

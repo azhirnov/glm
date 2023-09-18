@@ -3,13 +3,13 @@
 namespace glm
 {
 	template <length_t L, typename T, qualifier Q>
-	GLM_NODISCARD inline T levels(vec<L, T, Q> const& Extent)
+    inline T levels(vec<L, T, Q> const& Extent)
 	{
 		return glm::log2(compMax(Extent)) + static_cast<T>(1);
 	}
 
 	template <typename T>
-	GLM_NODISCARD inline T levels(T Extent)
+    inline T levels(T Extent)
 	{
 		return vec<1, T, defaultp>(Extent).x;
 	}
