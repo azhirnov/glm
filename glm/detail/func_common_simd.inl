@@ -99,56 +99,12 @@ namespace detail
 	};
 
 	template<qualifier Q>
-	struct compute_min_vector<4, int, Q, true>
-	{
-		GLM_FUNC_QUALIFIER static vec<4, int, Q> call(vec<4, int, Q> const& v1, vec<4, int, Q> const& v2)
-		{
-			vec<4, int, Q> result;
-			result.data = _mm_min_epi32(v1.data, v2.data);
-			return result;
-		}
-	};
-
-	template<qualifier Q>
-	struct compute_min_vector<4, uint, Q, true>
-	{
-		GLM_FUNC_QUALIFIER static vec<4, uint, Q> call(vec<4, uint, Q> const& v1, vec<4, uint, Q> const& v2)
-		{
-			vec<4, uint, Q> result;
-			result.data = _mm_min_epu32(v1.data, v2.data);
-			return result;
-		}
-	};
-
-	template<qualifier Q>
 	struct compute_max_vector<4, float, Q, true>
 	{
 		GLM_FUNC_QUALIFIER static vec<4, float, Q> call(vec<4, float, Q> const& v1, vec<4, float, Q> const& v2)
 		{
 			vec<4, float, Q> result;
 			result.data = _mm_max_ps(v1.data, v2.data);
-			return result;
-		}
-	};
-
-	template<qualifier Q>
-	struct compute_max_vector<4, int, Q, true>
-	{
-		GLM_FUNC_QUALIFIER static vec<4, int, Q> call(vec<4, int, Q> const& v1, vec<4, int, Q> const& v2)
-		{
-			vec<4, int, Q> result;
-			result.data = _mm_max_epi32(v1.data, v2.data);
-			return result;
-		}
-	};
-
-	template<qualifier Q>
-	struct compute_max_vector<4, uint, Q, true>
-	{
-		GLM_FUNC_QUALIFIER static vec<4, uint, Q> call(vec<4, uint, Q> const& v1, vec<4, uint, Q> const& v2)
-		{
-			vec<4, uint, Q> result;
-			result.data = _mm_max_epu32(v1.data, v2.data);
 			return result;
 		}
 	};
@@ -165,28 +121,6 @@ namespace detail
 	};
 
 	template<qualifier Q>
-	struct compute_clamp_vector<4, int, Q, true>
-	{
-		GLM_FUNC_QUALIFIER static vec<4, int, Q> call(vec<4, int, Q> const& x, vec<4, int, Q> const& minVal, vec<4, int, Q> const& maxVal)
-		{
-			vec<4, int, Q> result;
-			result.data = _mm_min_epi32(_mm_max_epi32(x.data, minVal.data), maxVal.data);
-			return result;
-		}
-	};
-
-	template<qualifier Q>
-	struct compute_clamp_vector<4, uint, Q, true>
-	{
-		GLM_FUNC_QUALIFIER static vec<4, uint, Q> call(vec<4, uint, Q> const& x, vec<4, uint, Q> const& minVal, vec<4, uint, Q> const& maxVal)
-		{
-			vec<4, uint, Q> result;
-			result.data = _mm_min_epu32(_mm_max_epu32(x.data, minVal.data), maxVal.data);
-			return result;
-		}
-	};
-
-	template<qualifier Q>
 	struct compute_mix_vector<4, float, bool, Q, true>
 	{
 		GLM_FUNC_QUALIFIER static vec<4, float, Q> call(vec<4, float, Q> const& x, vec<4, float, Q> const& y, vec<4, bool, Q> const& a)
@@ -195,7 +129,7 @@ namespace detail
 			__m128 const Mask = _mm_castsi128_ps(Load);
 
 			vec<4, float, Q> Result;
-#			if 0 && GLM_ARCH & GLM_ARCH_AVX
+#			if 0 && GLM_ARCH & GLM_ARCH_SSE41_BIT
 				Result.data = _mm_blendv_ps(x.data, y.data, Mask);
 #			else
 				Result.data = _mm_or_ps(_mm_and_ps(Mask, y.data), _mm_andnot_ps(Mask, x.data));
@@ -542,6 +476,86 @@ namespace detail
 }//namespace glm
 
 #endif//GLM_ARCH & GLM_ARCH_SSE2_BIT
+
+
+#if GLM_ARCH & GLM_ARCH_SSE41_BIT
+
+#include "../simd/common.h"
+
+namespace glm{
+namespace detail
+{
+	template<qualifier Q>
+	struct compute_min_vector<4, int, Q, true>
+	{
+		GLM_FUNC_QUALIFIER static vec<4, int, Q> call(vec<4, int, Q> const& v1, vec<4, int, Q> const& v2)
+		{
+			vec<4, int, Q> result;
+			result.data = _mm_min_epi32(v1.data, v2.data);
+			return result;
+		}
+	};
+
+	template<qualifier Q>
+	struct compute_min_vector<4, uint, Q, true>
+	{
+		GLM_FUNC_QUALIFIER static vec<4, uint, Q> call(vec<4, uint, Q> const& v1, vec<4, uint, Q> const& v2)
+		{
+			vec<4, uint, Q> result;
+			result.data = _mm_min_epu32(v1.data, v2.data);
+			return result;
+		}
+	};
+
+	template<qualifier Q>
+	struct compute_max_vector<4, int, Q, true>
+	{
+		GLM_FUNC_QUALIFIER static vec<4, int, Q> call(vec<4, int, Q> const& v1, vec<4, int, Q> const& v2)
+		{
+			vec<4, int, Q> result;
+			result.data = _mm_max_epi32(v1.data, v2.data);
+			return result;
+		}
+	};
+
+	template<qualifier Q>
+	struct compute_max_vector<4, uint, Q, true>
+	{
+		GLM_FUNC_QUALIFIER static vec<4, uint, Q> call(vec<4, uint, Q> const& v1, vec<4, uint, Q> const& v2)
+		{
+			vec<4, uint, Q> result;
+			result.data = _mm_max_epu32(v1.data, v2.data);
+			return result;
+		}
+	};
+
+	template<qualifier Q>
+	struct compute_clamp_vector<4, int, Q, true>
+	{
+		GLM_FUNC_QUALIFIER static vec<4, int, Q> call(vec<4, int, Q> const& x, vec<4, int, Q> const& minVal, vec<4, int, Q> const& maxVal)
+		{
+			vec<4, int, Q> result;
+			result.data = _mm_min_epi32(_mm_max_epi32(x.data, minVal.data), maxVal.data);
+			return result;
+		}
+	};
+
+	template<qualifier Q>
+	struct compute_clamp_vector<4, uint, Q, true>
+	{
+		GLM_FUNC_QUALIFIER static vec<4, uint, Q> call(vec<4, uint, Q> const& x, vec<4, uint, Q> const& minVal, vec<4, uint, Q> const& maxVal)
+		{
+			vec<4, uint, Q> result;
+			result.data = _mm_min_epu32(_mm_max_epu32(x.data, minVal.data), maxVal.data);
+			return result;
+		}
+	};
+
+}//namespace detail
+}//namespace glm
+
+#endif//GLM_ARCH & GLM_ARCH_SSE41_BIT
+
 
 #if GLM_ARCH & GLM_ARCH_NEON_BIT
 namespace glm {

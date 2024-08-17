@@ -9,59 +9,6 @@ namespace glm {
 	namespace detail
 	{
 
-template<length_t L, typename T, qualifier Q, int IsInt, std::size_t Size>
-struct compute_vec_and<L, T, Q, IsInt, Size, true> : public compute_vec_and<L, T, Q, IsInt, Size, false>
-{};
-
-template<length_t L, typename T, qualifier Q, int IsInt, std::size_t Size>
-struct compute_vec_or<L, T, Q, IsInt, Size, true>: public compute_vec_or<L, T, Q, IsInt, Size, false>
-{};
-
-template<length_t L, typename T, qualifier Q, int IsInt, std::size_t Size>
-struct compute_vec_xor<L, T, Q, IsInt, Size, true> : public compute_vec_xor<L, T, Q, IsInt, Size, false>
-{};
-
-template<length_t L, typename T, qualifier Q, int IsInt, std::size_t Size>
-struct compute_vec_shift_left<L, T, Q, IsInt, Size, true> : public compute_vec_shift_left<L, T, Q, IsInt, Size, false>
-{};
-
-template<length_t L, typename T, qualifier Q, int IsInt, std::size_t Size>
-struct compute_vec_shift_right<L, T, Q, IsInt, Size, true> : public compute_vec_shift_right<L, T, Q, IsInt, Size, false>
-{};
-
-template<length_t L, typename T, qualifier Q, int IsInt, std::size_t Size>
-struct compute_vec_bitwise_not<L, T, Q, IsInt, Size, true>:public compute_vec_bitwise_not<L, T, Q, IsInt, Size, false>
-{};
-
-template<length_t L, typename T, qualifier Q, int IsInt, std::size_t Size>
-struct compute_vec_equal<L, T, Q, IsInt, Size, true> : public compute_vec_equal<L, T, Q, IsInt, Size, false>
-{};
-
-template<length_t L, typename T, qualifier Q, int IsInt, std::size_t Size>
-struct compute_vec_nequal<L, T, Q, IsInt, Size, true> : public compute_vec_nequal<L, T, Q, IsInt, Size, false>
-{};
-
-template<length_t L, typename T, qualifier Q>
-struct compute_vec_mod<L, T, Q, true> : public compute_vec_mod<L, T, Q, false>
-{};
-
-
-template<typename T, length_t L, qualifier Q>
-struct compute_vec_add<L, T, Q, true> : public compute_vec_add<L, T, Q, false>
-{};
-
-template< length_t L, typename T,  qualifier Q>
-struct compute_vec_sub<L, T, Q, true> : public compute_vec_sub<L, T, Q, false>
-{};
-
-template< length_t L, typename T, qualifier Q>
-struct compute_vec_mul<L, T, Q, true> : public compute_vec_mul<L, T, Q, false>
-{};
-
-template< length_t L, typename T, qualifier Q>
-struct compute_vec_div<L, T, Q, true> : public compute_vec_div<L, T, Q, false>
-{};
-
 #if GLM_ARCH & GLM_ARCH_SSE2_BIT
 
 #	if GLM_CONFIG_SWIZZLE == GLM_SWIZZLE_OPERATOR
@@ -921,7 +868,7 @@ struct _swizzle_base1<L, uint, Q, E0, E1, E2, E3, true> : public _swizzle_base1<
 	{
 		static bool call(vec<L, float, Q> const& v1, vec<L, float, Q> const& v2)
 		{
-			return !compute_vec_equal<float, Q, false, 32, true>::call(v1, v2);
+			return !compute_vec_equal<L, float, Q, false, 32, true>::call(v1, v2);
 		}
 	};
 
@@ -930,7 +877,7 @@ struct _swizzle_base1<L, uint, Q, E0, E1, E2, E3, true> : public _swizzle_base1<
 	{
 		static bool call(vec<L, uint, Q> const& v1, vec<L, uint, Q> const& v2)
 		{
-			return !compute_vec_equal<uint, Q, false, 32, true>::call(v1, v2);
+			return !compute_vec_equal<L, uint, Q, false, 32, true>::call(v1, v2);
 		}
 	};
 
@@ -939,7 +886,7 @@ struct _swizzle_base1<L, uint, Q, E0, E1, E2, E3, true> : public _swizzle_base1<
 	{
 		static bool call(vec<L, int, Q> const& v1, vec<L, int, Q> const& v2)
 		{
-			return !compute_vec_equal<int, Q, false, 32, true>::call(v1, v2);
+			return !compute_vec_equal<L, int, Q, false, 32, true>::call(v1, v2);
 		}
 	};
 

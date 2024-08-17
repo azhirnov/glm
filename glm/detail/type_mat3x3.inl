@@ -485,32 +485,7 @@ namespace glm
 	namespace detail
 	{
 		template<typename T, qualifier Q, bool is_aligned>
-		struct mul3x3 {};
-
-#if GLM_CONFIG_SIMD == GLM_ENABLE
-		template<typename T, qualifier Q>
-		struct mul3x3<T, Q, true>
-		{
-			GLM_FUNC_QUALIFIER static mat<3, 3, T, Q> call(mat<3, 3, T, Q> const& m1, mat<3, 3, T, Q> const& m2)
-			{
-				typename mat<4, 4, T, Q>::col_type const SrcA0 = xyzz(m1[0]);
-				typename mat<4, 4, T, Q>::col_type const SrcA1 = xyzz(m1[1]);
-				typename mat<4, 4, T, Q>::col_type const SrcA2 = xyzz(m1[2]);
-
-				typename mat<4, 4, T, Q>::col_type const SrcB0 = xyzz(m2[0]);
-				typename mat<4, 4, T, Q>::col_type const SrcB1 = xyzz(m2[1]);
-				typename mat<4, 4, T, Q>::col_type const SrcB2 = xyzz(m2[2]);
-
-				mat<3, 3, T, Q> Result;
-				Result[0] = xyz(glm::fma(SrcA2, splatZ(SrcB0), glm::fma(SrcA1, splatY(SrcB0), SrcA0 * splatX(SrcB0))));
-				Result[1] = xyz(glm::fma(SrcA2, splatZ(SrcB1), glm::fma(SrcA1, splatY(SrcB1), SrcA0 * splatX(SrcB1))));
-				Result[2] = xyz(glm::fma(SrcA2, splatZ(SrcB2), glm::fma(SrcA1, splatY(SrcB2), SrcA0 * splatX(SrcB2))));
-				return mat<3, 3, T, Q>(Result);
-			}
-		};
-#endif
-		template<typename T, qualifier Q>
-		struct mul3x3<T, Q, false>
+		struct mul3x3
 		{
 			GLM_FUNC_QUALIFIER static mat<3, 3, T, Q> call(mat<3, 3, T, Q> const& m1, mat<3, 3, T, Q> const& m2)
 			{
@@ -544,6 +519,29 @@ namespace glm
 				return Result;
 			}
 		};
+
+#if GLM_CONFIG_SIMD == GLM_ENABLE
+		template<typename T, qualifier Q>
+		struct mul3x3<T, Q, true>
+		{
+			GLM_FUNC_QUALIFIER static mat<3, 3, T, Q> call(mat<3, 3, T, Q> const& m1, mat<3, 3, T, Q> const& m2)
+			{
+				typename mat<4, 4, T, Q>::col_type const SrcA0 = xyzz(m1[0]);
+				typename mat<4, 4, T, Q>::col_type const SrcA1 = xyzz(m1[1]);
+				typename mat<4, 4, T, Q>::col_type const SrcA2 = xyzz(m1[2]);
+
+				typename mat<4, 4, T, Q>::col_type const SrcB0 = xyzz(m2[0]);
+				typename mat<4, 4, T, Q>::col_type const SrcB1 = xyzz(m2[1]);
+				typename mat<4, 4, T, Q>::col_type const SrcB2 = xyzz(m2[2]);
+
+				mat<3, 3, T, Q> Result;
+				Result[0] = xyz(glm::fma(SrcA2, splatZ(SrcB0), glm::fma(SrcA1, splatY(SrcB0), SrcA0 * splatX(SrcB0))));
+				Result[1] = xyz(glm::fma(SrcA2, splatZ(SrcB1), glm::fma(SrcA1, splatY(SrcB1), SrcA0 * splatX(SrcB1))));
+				Result[2] = xyz(glm::fma(SrcA2, splatZ(SrcB2), glm::fma(SrcA1, splatY(SrcB2), SrcA0 * splatX(SrcB2))));
+				return mat<3, 3, T, Q>(Result);
+			}
+		};
+#endif
 	}
 
 	template<typename T, qualifier Q>

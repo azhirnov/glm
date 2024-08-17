@@ -994,7 +994,8 @@ namespace detail
 	}
 
 	// -- Boolean operators --
-
+	
+#ifndef GLM_AE_VERSION
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR bool operator==(vec<4, T, Q> const& v1, vec<4, T, Q> const& v2)
 	{
@@ -1006,6 +1007,7 @@ namespace detail
 	{
 		return detail::compute_vec_nequal<4, T, Q, detail::is_int<T>::value, sizeof(T) * 8, detail::is_aligned<Q>::value>::call(v1, v2);
 	}
+#endif
 
 	template<qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, bool, Q> operator&&(vec<4, bool, Q> const& v1, vec<4, bool, Q> const& v2)
