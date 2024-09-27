@@ -617,6 +617,14 @@
 #endif
 
 ///////////////////////////////////////////////////////////////////////////////////
+
+#ifdef GLM_AE_VERSION
+#	define GLM_CAST(t,x)	(x)
+#else
+#	define GLM_CAST(t,x)	(static_cast<t>(x))
+#endif
+
+///////////////////////////////////////////////////////////////////////////////////
 // Length type: all length functions returns a length_t type.
 // When GLM_FORCE_SIZE_T_LENGTH is defined, length_t is a typedef of size_t otherwise
 // length_t is a typedef of int like GLSL defines it.

@@ -584,7 +584,7 @@ namespace detail
 		detail::i10i10i10i2 Unpack;
 		Unpack.pack = v;
 
-		vec4 const Result(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w);
+		vec4 const Result(ivec4(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w));
 
 		return clamp(Result * vec4(1.f / 511.f, 1.f / 511.f, 1.f / 511.f, 1.f), -1.0f, 1.0f);
 	}
@@ -607,7 +607,7 @@ namespace detail
 
 		detail::u10u10u10u2 Unpack;
 		Unpack.pack = v;
-		return vec4(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w) * ScaleFactors;
+		return vec4(uvec4(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w)) * ScaleFactors;
 	}
 
 	GLM_FUNC_QUALIFIER uint32 packF2x11_1x10(vec3 const& v)
@@ -651,7 +651,7 @@ namespace detail
 		detail::u9u9u9e5 Unpack;
 		Unpack.pack = v;
 
-		return vec3(Unpack.data.x, Unpack.data.y, Unpack.data.z) * pow(2.0f, static_cast<float>(Unpack.data.w) - 15.f - 9.f);
+		return vec3(uvec3(Unpack.data.x, Unpack.data.y, Unpack.data.z)) * pow(2.0f, static_cast<float>(Unpack.data.w) - 15.f - 9.f);
 	}
 
 	// Based on Brian Karis http://graphicrants.blogspot.fr/2009/04/rgbm-color-encoding.html
@@ -732,7 +732,7 @@ namespace detail
 		float const ScaleFactor(1.f / 15.f);
 		detail::u4u4 Unpack;
 		Unpack.pack = v;
-		return vec2(Unpack.data.x, Unpack.data.y) * ScaleFactor;
+		return vec2(uvec2(Unpack.data.x, Unpack.data.y)) * ScaleFactor;
 	}
 
 	GLM_FUNC_QUALIFIER uint16 packUnorm4x4(vec4 const& v)
@@ -751,7 +751,7 @@ namespace detail
 		float const ScaleFactor(1.f / 15.f);
 		detail::u4u4u4u4 Unpack;
 		Unpack.pack = v;
-		return vec4(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w) * ScaleFactor;
+		return vec4(uvec4(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w)) * ScaleFactor;
 	}
 
 	GLM_FUNC_QUALIFIER uint16 packUnorm1x5_1x6_1x5(vec3 const& v)
@@ -769,7 +769,7 @@ namespace detail
 		vec3 const ScaleFactor(1.f / 31.f, 1.f / 63.f, 1.f / 31.f);
 		detail::u5u6u5 Unpack;
 		Unpack.pack = v;
-		return vec3(Unpack.data.x, Unpack.data.y, Unpack.data.z) * ScaleFactor;
+		return vec3(uvec3(Unpack.data.x, Unpack.data.y, Unpack.data.z)) * ScaleFactor;
 	}
 
 	GLM_FUNC_QUALIFIER uint16 packUnorm3x5_1x1(vec4 const& v)
@@ -788,7 +788,7 @@ namespace detail
 		vec4 const ScaleFactor(1.f / 31.f, 1.f / 31.f, 1.f / 31.f, 1.f);
 		detail::u5u5u5u1 Unpack;
 		Unpack.pack = v;
-		return vec4(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w) * ScaleFactor;
+		return vec4(uvec4(Unpack.data.x, Unpack.data.y, Unpack.data.z, Unpack.data.w)) * ScaleFactor;
 	}
 
 	GLM_FUNC_QUALIFIER uint8 packUnorm2x3_1x2(vec3 const& v)
@@ -806,7 +806,7 @@ namespace detail
 		vec3 const ScaleFactor(1.f / 7.f, 1.f / 7.f, 1.f / 3.f);
 		detail::u3u3u2 Unpack;
 		Unpack.pack = v;
-		return vec3(Unpack.data.x, Unpack.data.y, Unpack.data.z) * ScaleFactor;
+		return vec3(uvec3(Unpack.data.x, Unpack.data.y, Unpack.data.z)) * ScaleFactor;
 	}
 
 	GLM_FUNC_QUALIFIER int16 packInt2x8(i8vec2 const& v)

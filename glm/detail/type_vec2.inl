@@ -39,6 +39,8 @@ namespace glm
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<2, T, Q>::vec(T _x, T _y)
 		: x(_x), y(_y)
 	{}
+	
+#ifndef GLM_AE_VERSION
 
 	// -- Conversion scalar constructors --
 
@@ -76,6 +78,8 @@ namespace glm
 		: x(static_cast<T>(_x.x))
 		, y(static_cast<T>(_y.x))
 	{}
+
+#endif
 
 	// -- Conversion vector constructors --
 

@@ -40,6 +40,8 @@ namespace glm
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<3, T, Q>::vec(T _x, T _y, T _z)
 		: x(_x), y(_y), z(_z)
 	{}
+	
+#ifndef GLM_AE_VERSION
 
 	// -- Conversion scalar constructors --
 
@@ -115,6 +117,8 @@ namespace glm
 		, z(static_cast<T>(_z.x))
 	{}
 
+#endif
+
 	// -- Conversion vector constructors --
 
 	template<typename T, qualifier Q>
@@ -122,7 +126,7 @@ namespace glm
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<3, T, Q>::vec(vec<2, A, P> const& _xy, B _z)
 		: x(static_cast<T>(_xy.x))
 		, y(static_cast<T>(_xy.y))
-		, z(static_cast<T>(_z))
+		, z(GLM_CAST(T,_z))
 	{}
 
 	template<typename T, qualifier Q>
@@ -136,7 +140,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	template<typename A, typename B, qualifier P>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<3, T, Q>::vec(A _x, vec<2, B, P> const& _yz)
-		: x(static_cast<T>(_x))
+		: x(GLM_CAST(T,_x))
 		, y(static_cast<T>(_yz.x))
 		, z(static_cast<T>(_yz.y))
 	{}
@@ -841,11 +845,13 @@ namespace glm {
 	CTORSL(3, CTOR_FLOAT);
 	CTORSL(3, CTOR_INT);
 	CTORSL(3, CTOR_UINT);
-	CTORSL(3, CTOR_VECF_INT3);
-	CTORSL(3, CTOR_VECF_UINT3);
-	CTORSL(3, CTOR_VECF_VECF);
-	CTORSL(3, CTOR_VECF_VECI);
-	CTORSL(3, CTOR_VECF_VECU);
+    CTORSL(3, CTOR_VECF_VECF);
+    #ifndef GLM_AE_VERSION
+	    CTORSL(3, CTOR_VECF_INT3);
+	    CTORSL(3, CTOR_VECF_UINT3);
+	    CTORSL(3, CTOR_VECF_VECI);
+	    CTORSL(3, CTOR_VECF_VECU);
+    #endif
 #endif
 
 #if GLM_ARCH & GLM_ARCH_SSE2_BIT
@@ -856,7 +862,9 @@ namespace glm {
 	CTORSL(3, CTOR_DOUBLE3);
 	CTORSL(3, CTOR_INT);
 	CTORSL(3, CTOR_INT3);
-	CTORSL(3, CTOR_VECF_INT3);
+	#ifndef GLM_AE_VERSION
+		CTORSL(3, CTOR_VECF_INT3);
+	#endif
 
 
 	template<>

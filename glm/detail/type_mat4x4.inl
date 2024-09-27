@@ -189,7 +189,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR mat<4, 4, T, Q>::mat(mat<3, 3, T, Q> const& m)
 #		if GLM_HAS_INITIALIZER_LISTS
-			: value{col_type(m[0], 0), col_type(m[1], 0), col_type(m[2], 0), col_type(0, 0, 0, 1)}
+			: value{col_type(m[0], T(0)), col_type(m[1], T(0)), col_type(m[2], T(0)), col_type(0, 0, 0, 1)}
 #		endif
 	{
 #		if !GLM_HAS_INITIALIZER_LISTS

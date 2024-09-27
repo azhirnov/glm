@@ -112,6 +112,7 @@ namespace glm
 		GLM_CTOR_DECL explicit vec(T scalar);
 		GLM_CTOR_DECL vec(T x, T y, T z, T w);
 
+	#ifndef GLM_AE_VERSION
 		// -- Conversion scalar constructors --
 
 		template<typename U, qualifier P>
@@ -148,6 +149,7 @@ namespace glm
 		GLM_CTOR_DECL vec(X _x, vec<1, Y, Q> const& _y, vec<1, Z, Q> const& _z, vec<1, W, Q> const& _w);
 		template<typename X, typename Y, typename Z, typename W>
 		GLM_CTOR_DECL vec(vec<1, X, Q> const& _x, vec<1, Y, Q> const& _y, vec<1, Z, Q> const& _z, vec<1, W, Q> const& _w);
+	#endif
 
 		// -- Conversion vector constructors --
 

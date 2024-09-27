@@ -46,6 +46,8 @@ namespace detail
 	{}
 
 	// -- Conversion scalar constructors --
+	
+#ifndef GLM_AE_VERSION
 
 	template<typename T, qualifier Q>
 	template<typename U, qualifier P>
@@ -191,6 +193,8 @@ namespace detail
 		, w(static_cast<T>(_w.x))
 	{}
 
+#endif
+
 	// -- Conversion vector constructors --
 
 	template<typename T, qualifier Q>
@@ -198,8 +202,8 @@ namespace detail
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q>::vec(vec<2, A, P> const& _xy, B _z, C _w)
 		: x(static_cast<T>(_xy.x))
 		, y(static_cast<T>(_xy.y))
-		, z(static_cast<T>(_z))
-		, w(static_cast<T>(_w))
+		, z(GLM_CAST(T,_z))
+		, w(GLM_CAST(T,_w))
 	{}
 
 	template<typename T, qualifier Q>
@@ -208,7 +212,7 @@ namespace detail
 		: x(static_cast<T>(_xy.x))
 		, y(static_cast<T>(_xy.y))
 		, z(static_cast<T>(_z.x))
-		, w(static_cast<T>(_w))
+		, w(GLM_CAST(T,_w))
 	{}
 
 	template<typename T, qualifier Q>
@@ -216,7 +220,7 @@ namespace detail
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q>::vec(vec<2, A, P> const& _xy, B _z, vec<1, C, P> const& _w)
 		: x(static_cast<T>(_xy.x))
 		, y(static_cast<T>(_xy.y))
-		, z(static_cast<T>(_z))
+		, z(GLM_CAST(T,_z))
 		, w(static_cast<T>(_w.x))
 	{}
 
@@ -232,10 +236,10 @@ namespace detail
 	template<typename T, qualifier Q>
 	template<typename A, typename B, typename C, qualifier P>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q>::vec(A _x, vec<2, B, P> const& _yz, C _w)
-		: x(static_cast<T>(_x))
+		: x(GLM_CAST(T,_x))
 		, y(static_cast<T>(_yz.x))
 		, z(static_cast<T>(_yz.y))
-		, w(static_cast<T>(_w))
+		, w(GLM_CAST(T,_w))
 	{}
 
 	template<typename T, qualifier Q>
@@ -244,13 +248,13 @@ namespace detail
 		: x(static_cast<T>(_x.x))
 		, y(static_cast<T>(_yz.x))
 		, z(static_cast<T>(_yz.y))
-		, w(static_cast<T>(_w))
+		, w(GLM_CAST(T,_w))
 	{}
 
 	template<typename T, qualifier Q>
 	template<typename A, typename B, typename C, qualifier P>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q>::vec(A _x, vec<2, B, P> const& _yz, vec<1, C, P> const& _w)
-		: x(static_cast<T>(_x))
+		: x(GLM_CAST(T,_x))
 		, y(static_cast<T>(_yz.x))
 		, z(static_cast<T>(_yz.y))
 		, w(static_cast<T>(_w.x))
@@ -268,8 +272,8 @@ namespace detail
 	template<typename T, qualifier Q>
 	template<typename A, typename B, typename C, qualifier P>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q>::vec(A _x, B _y, vec<2, C, P> const& _zw)
-		: x(static_cast<T>(_x))
-		, y(static_cast<T>(_y))
+		: x(GLM_CAST(T,_x))
+		, y(GLM_CAST(T,_y))
 		, z(static_cast<T>(_zw.x))
 		, w(static_cast<T>(_zw.y))
 	{}
@@ -278,7 +282,7 @@ namespace detail
 	template<typename A, typename B, typename C, qualifier P>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q>::vec(vec<1, A, P> const& _x, B _y, vec<2, C, P> const& _zw)
 		: x(static_cast<T>(_x.x))
-		, y(static_cast<T>(_y))
+		, y(GLM_CAST(T,_y))
 		, z(static_cast<T>(_zw.x))
 		, w(static_cast<T>(_zw.y))
 	{}
@@ -286,7 +290,7 @@ namespace detail
 	template<typename T, qualifier Q>
 	template<typename A, typename B, typename C, qualifier P>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q>::vec(A _x, vec<1, B, P> const& _y, vec<2, C, P> const& _zw)
-		: x(static_cast<T>(_x))
+		: x(GLM_CAST(T,_x))
 		, y(static_cast<T>(_y.x))
 		, z(static_cast<T>(_zw.x))
 		, w(static_cast<T>(_zw.y))
@@ -307,7 +311,7 @@ namespace detail
 		: x(static_cast<T>(_xyz.x))
 		, y(static_cast<T>(_xyz.y))
 		, z(static_cast<T>(_xyz.z))
-		, w(static_cast<T>(_w))
+		, w(GLM_CAST(T,_w))
 	{}
 
 	template<typename T, qualifier Q>
@@ -322,7 +326,7 @@ namespace detail
 	template<typename T, qualifier Q>
 	template<typename A, typename B, qualifier P>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<4, T, Q>::vec(A _x, vec<3, B, P> const& _yzw)
-		: x(static_cast<T>(_x))
+		: x(GLM_CAST(T,_x))
 		, y(static_cast<T>(_yzw.x))
 		, z(static_cast<T>(_yzw.y))
 		, w(static_cast<T>(_yzw.z))
@@ -1030,12 +1034,13 @@ namespace glm {
 	CTORSL(4, CTOR_FLOAT);
 	CTORSL(4, CTOR_INT);
 	CTORSL(4, CTOR_UINT);
-	CTORSL(4, CTOR_VECF_INT4);
-	CTORSL(4, CTOR_VECF_UINT4);
-	CTORSL(4, CTOR_VECF_VECF);
-	CTORSL(4, CTOR_VECF_VECI);
-	CTORSL(4, CTOR_VECF_VECU);
-
+    CTORSL(4, CTOR_VECF_VECF);
+    #ifndef GLM_AE_VERSION
+        CTORSL(4, CTOR_VECF_INT4);
+        CTORSL(4, CTOR_VECF_UINT4);
+        CTORSL(4, CTOR_VECF_VECI);
+        CTORSL(4, CTOR_VECF_VECU);
+    #endif
 
 #endif// GLM_ARCH & GLM_ARCH_NEON_BIT
 
@@ -1046,7 +1051,9 @@ namespace glm {
 	CTORSL(4, CTOR_DOUBLE4);
 	CTORSL(4, CTOR_INT);
 	CTORSL(4, CTOR_INT4);
-	CTORSL(4, CTOR_VECF_INT4);
+	#ifndef GLM_AE_VERSION
+		CTORSL(4, CTOR_VECF_INT4);
+	#endif
 
 	template<>
 	template<>
