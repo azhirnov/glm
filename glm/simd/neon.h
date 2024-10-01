@@ -92,7 +92,8 @@ namespace glm {
 				case 1: l = vgetq_lane_f32(vsrc, 1); break;
 				case 2: l = vgetq_lane_f32(vsrc, 2); break;
 				case 3: l = vgetq_lane_f32(vsrc, 3); break;
-				default: 
+				default:
+                    l = 0.f;
 					assert(false); //Unreachable code executed!
 			}
 			switch(dlane) {

@@ -39,7 +39,7 @@ namespace glm
 
 		// -- Data --
 
-#		if GLM_LANG & GLM_LANG_CXXMS_FLAG
+#		if GLM_CONFIG_ANONYMOUS_STRUCT == GLM_ENABLE
 			union
 			{
 #				ifdef GLM_FORCE_QUAT_DATA_WXYZ
