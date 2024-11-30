@@ -36,7 +36,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR mat<4, 2, T, Q>::mat(T s)
 #		if GLM_HAS_INITIALIZER_LISTS
-			: value{col_type(s, 0), col_type(0, s), col_type(0, 0), col_type(0, 0)}
+			: value{col_type(s, T(0)), col_type(T(0), s), col_type(0, 0), col_type(0, 0)}
 #		endif
 	{
 #		if !GLM_HAS_INITIALIZER_LISTS

@@ -37,7 +37,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR mat<3, 3, T, Q>::mat(T s)
 #		if GLM_HAS_INITIALIZER_LISTS
-			: value{col_type(s, 0, 0), col_type(0, s, 0), col_type(0, 0, s)}
+			: value{col_type(s, T(0), T(0)), col_type(T(0), s, T(0)), col_type(T(0), T(0), s)}
 #		endif
 	{
 #		if !GLM_HAS_INITIALIZER_LISTS
@@ -135,7 +135,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR mat<3, 3, T, Q>::mat(mat<2, 2, T, Q> const& m)
 #		if GLM_HAS_INITIALIZER_LISTS
-			: value{col_type(m[0], 0), col_type(m[1], 0), col_type(0, 0, 1)}
+			: value{col_type(m[0], T(0)), col_type(m[1], T(0)), col_type(0, 0, 1)}
 #		endif
 	{
 #		if !GLM_HAS_INITIALIZER_LISTS
@@ -161,7 +161,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR mat<3, 3, T, Q>::mat(mat<2, 3, T, Q> const& m)
 #		if GLM_HAS_INITIALIZER_LISTS
-			: value{col_type(m[0]), col_type(m[1]), col_type(0, 0, 1)}
+			: value{col_type(m[0]), col_type(m[1]), col_type(T(0), T(0), T(1))}
 #		endif
 	{
 #		if !GLM_HAS_INITIALIZER_LISTS
@@ -174,7 +174,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR mat<3, 3, T, Q>::mat(mat<3, 2, T, Q> const& m)
 #		if GLM_HAS_INITIALIZER_LISTS
-			: value{col_type(m[0], 0), col_type(m[1], 0), col_type(m[2], 1)}
+			: value{col_type(m[0], T(0)), col_type(m[1], T(0)), col_type(m[2], T(1))}
 #		endif
 	{
 #		if !GLM_HAS_INITIALIZER_LISTS
@@ -200,7 +200,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER GLM_CONSTEXPR mat<3, 3, T, Q>::mat(mat<4, 2, T, Q> const& m)
 #		if GLM_HAS_INITIALIZER_LISTS
-			: value{col_type(m[0], 0), col_type(m[1], 0), col_type(m[2], 1)}
+			: value{col_type(m[0], T(0)), col_type(m[1], T(0)), col_type(m[2], T(1))}
 #		endif
 	{
 #		if !GLM_HAS_INITIALIZER_LISTS
